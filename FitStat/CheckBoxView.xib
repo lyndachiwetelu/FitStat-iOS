@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckBoxView" customModule="FitStat" customModuleProvider="target">
+            <connections>
+                <outlet property="checkBoxBtnImg" destination="mYZ-aI-NPI" id="0ps-sD-rRW"/>
+                <outlet property="checkBoxLabel" destination="Hhj-xd-y4b" id="HjF-Du-5nZ"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="FGj-6F-TgW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="center" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m9V-py-V6U">
+                    <rect key="frame" x="44" y="0.0" width="852" height="393"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYZ-aI-NPI">
+                            <rect key="frame" x="16" y="30" width="385.5" height="333"/>
+                            <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="20" bottom="8" trailing="20"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" image="unchecked"/>
+                            <connections>
+                                <action selector="checkBoxClicked:" destination="-1" eventType="touchUpInside" id="Vny-na-o1g"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A LABEL FOR YOU" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhj-xd-y4b">
+                            <rect key="frame" x="406.5" y="30" width="385.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="AppWhiteBg"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="30" leading="8" bottom="30" trailing="8"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="AppWhitePrio"/>
+            <constraints>
+                <constraint firstItem="m9V-py-V6U" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5gh-Zx-WOo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="m9V-py-V6U" secondAttribute="bottom" id="5l7-bx-tTy"/>
+                <constraint firstItem="m9V-py-V6U" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="K9c-yn-mqV"/>
+                <constraint firstAttribute="trailing" secondItem="m9V-py-V6U" secondAttribute="trailing" id="QnB-mI-9Pu"/>
+            </constraints>
+            <point key="canvasLocation" x="24.637681159420293" y="73.660714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="unchecked" width="1024" height="1024"/>
+        <namedColor name="AppWhiteBg">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppWhitePrio">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

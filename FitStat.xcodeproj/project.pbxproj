@@ -14,6 +14,16 @@
 		78BA0CDF26D6720000093DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BA0CDE26D6720000093DD8 /* Assets.xcassets */; };
 		78BA0CE226D6720000093DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BA0CE026D6720000093DD8 /* LaunchScreen.storyboard */; };
 		78DB1FEA26D72916001B0A5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DB1FE926D72915001B0A5A /* Colors.xcassets */; };
+		78DB1FEC26D7923D001B0A5A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FEB26D7923D001B0A5A /* SettingsViewController.swift */; };
+		78DB1FEE26D79255001B0A5A /* StatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FED26D79255001B0A5A /* StatListViewController.swift */; };
+		78DB1FF026D7954A001B0A5A /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FEF26D7954A001B0A5A /* AddFoodViewController.swift */; };
+		78DB1FF226D7956F001B0A5A /* AddSleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FF126D7956F001B0A5A /* AddSleepViewController.swift */; };
+		78DB1FF426D79617001B0A5A /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FF326D79617001B0A5A /* AddWorkoutViewController.swift */; };
+		78DB1FF626D79A0B001B0A5A /* AddWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FF526D79A0B001B0A5A /* AddWeightViewController.swift */; };
+		78DB1FF826D79A3C001B0A5A /* AddBodyMetricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FF726D79A3C001B0A5A /* AddBodyMetricViewController.swift */; };
+		78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FF926D79A50001B0A5A /* AddMoodViewController.swift */; };
+		78F0F2D426D7BAC60023B6B3 /* CheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F0F2D326D7BAC60023B6B3 /* CheckBoxView.xib */; };
+		78F0F2D626D7BAE50023B6B3 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F0F2D526D7BAE50023B6B3 /* CheckBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		78BA0CE126D6720000093DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78BA0CE326D6720000093DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78DB1FE926D72915001B0A5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		78DB1FEB26D7923D001B0A5A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		78DB1FED26D79255001B0A5A /* StatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListViewController.swift; sourceTree = "<group>"; };
+		78DB1FEF26D7954A001B0A5A /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
+		78DB1FF126D7956F001B0A5A /* AddSleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSleepViewController.swift; sourceTree = "<group>"; };
+		78DB1FF326D79617001B0A5A /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
+		78DB1FF526D79A0B001B0A5A /* AddWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeightViewController.swift; sourceTree = "<group>"; };
+		78DB1FF726D79A3C001B0A5A /* AddBodyMetricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBodyMetricViewController.swift; sourceTree = "<group>"; };
+		78DB1FF926D79A50001B0A5A /* AddMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoodViewController.swift; sourceTree = "<group>"; };
+		78F0F2D326D7BAC60023B6B3 /* CheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxView.xib; sourceTree = "<group>"; };
+		78F0F2D526D7BAE50023B6B3 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +85,8 @@
 				78BA0CDE26D6720000093DD8 /* Assets.xcassets */,
 				78BA0CE326D6720000093DD8 /* Info.plist */,
 				78DB1FE926D72915001B0A5A /* Colors.xcassets */,
+				78F0F2D326D7BAC60023B6B3 /* CheckBoxView.xib */,
+				78F0F2D526D7BAE50023B6B3 /* CheckBoxView.swift */,
 			);
 			path = FitStat;
 			sourceTree = "<group>";
@@ -82,6 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				78BA0CD926D671FD00093DD8 /* ViewController.swift */,
+				78DB1FEB26D7923D001B0A5A /* SettingsViewController.swift */,
+				78DB1FED26D79255001B0A5A /* StatListViewController.swift */,
+				78DB1FEF26D7954A001B0A5A /* AddFoodViewController.swift */,
+				78DB1FF126D7956F001B0A5A /* AddSleepViewController.swift */,
+				78DB1FF326D79617001B0A5A /* AddWorkoutViewController.swift */,
+				78DB1FF526D79A0B001B0A5A /* AddWeightViewController.swift */,
+				78DB1FF726D79A3C001B0A5A /* AddBodyMetricViewController.swift */,
+				78DB1FF926D79A50001B0A5A /* AddMoodViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,6 +176,7 @@
 				78BA0CE226D6720000093DD8 /* LaunchScreen.storyboard in Resources */,
 				78DB1FEA26D72916001B0A5A /* Colors.xcassets in Resources */,
 				78BA0CDF26D6720000093DD8 /* Assets.xcassets in Resources */,
+				78F0F2D426D7BAC60023B6B3 /* CheckBoxView.xib in Resources */,
 				78BA0CDD26D671FD00093DD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,9 +188,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78DB1FF826D79A3C001B0A5A /* AddBodyMetricViewController.swift in Sources */,
 				78BA0CDA26D671FD00093DD8 /* ViewController.swift in Sources */,
+				78DB1FF226D7956F001B0A5A /* AddSleepViewController.swift in Sources */,
 				78BA0CD626D671FD00093DD8 /* AppDelegate.swift in Sources */,
+				78DB1FEE26D79255001B0A5A /* StatListViewController.swift in Sources */,
+				78DB1FF426D79617001B0A5A /* AddWorkoutViewController.swift in Sources */,
+				78DB1FF626D79A0B001B0A5A /* AddWeightViewController.swift in Sources */,
+				78F0F2D626D7BAE50023B6B3 /* CheckBoxView.swift in Sources */,
 				78BA0CD826D671FD00093DD8 /* SceneDelegate.swift in Sources */,
+				78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */,
+				78DB1FF026D7954A001B0A5A /* AddFoodViewController.swift in Sources */,
+				78DB1FEC26D7923D001B0A5A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
