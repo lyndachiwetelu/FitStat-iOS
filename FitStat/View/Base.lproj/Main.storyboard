@@ -1,24 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FitStat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Czn-mw-Ntd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXL-dy-a22" userLabel="Green">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="182"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obq-kR-JtW">
+                                                <rect key="frame" x="15" y="15" width="384" height="152"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to Log?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-cL-hR4">
+                                                        <rect key="frame" x="48.666666666666657" y="61" width="286.66666666666674" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                                        <color key="textColor" name="AppWhiteBg"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="AppPinkPriority"/>
+                                                <constraints>
+                                                    <constraint firstItem="QO8-cL-hR4" firstAttribute="centerX" secondItem="Obq-kR-JtW" secondAttribute="centerX" id="46t-Nd-eLj"/>
+                                                    <constraint firstItem="QO8-cL-hR4" firstAttribute="centerY" secondItem="Obq-kR-JtW" secondAttribute="centerY" id="7Sy-w9-nUw"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="15" bottom="15" trailing="15"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="aJa-ds-HJo" userLabel="White">
+                                        <rect key="frame" x="0.0" y="212" width="414" height="182"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H5j-mq-DWA">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="182"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="salad" translatesAutoresizingMaskIntoConstraints="NO" id="uvs-iM-DVL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="148"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kM6-PU-Cc4">
+                                                        <rect key="frame" x="0.0" y="148" width="192" height="34"/>
+                                                        <color key="backgroundColor" name="AppPinkPriority"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="FOOD">
+                                                            <color key="titleColor" name="AppWhiteBg"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="kM6-PU-Cc4" firstAttribute="leading" secondItem="H5j-mq-DWA" secondAttribute="leading" id="6Ro-rL-s9J"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kM6-PU-Cc4" secondAttribute="trailing" id="iGi-pC-uQd"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qre-1a-W2D">
+                                                <rect key="frame" x="222" y="0.0" width="192" height="182"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="sleeping" translatesAutoresizingMaskIntoConstraints="NO" id="ocF-YU-TwA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="148"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyA-8w-ffn">
+                                                        <rect key="frame" x="0.0" y="148" width="192" height="34"/>
+                                                        <color key="backgroundColor" name="AppPinkPriority"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="SLEEPING">
+                                                            <color key="titleColor" name="AppWhiteBg"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="EyA-8w-ffn" firstAttribute="leading" secondItem="Qre-1a-W2D" secondAttribute="leading" id="CPv-WQ-zOV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EyA-8w-ffn" secondAttribute="trailing" id="e3B-tO-QJ2"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="q5V-W5-Bta" userLabel="Purple">
+                                        <rect key="frame" x="0.0" y="424" width="414" height="182"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GfX-jR-94B">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="182"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="attitude" translatesAutoresizingMaskIntoConstraints="NO" id="SCX-7y-vgD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="152"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-7Z-EQb">
+                                                        <rect key="frame" x="0.0" y="152" width="192" height="30"/>
+                                                        <color key="backgroundColor" name="AppPinkPriority"/>
+                                                        <state key="normal" title="MOOD">
+                                                            <color key="titleColor" name="AppWhiteBg"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="5Ch-7Z-EQb" firstAttribute="leading" secondItem="GfX-jR-94B" secondAttribute="leading" id="HXt-an-F5I"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5Ch-7Z-EQb" secondAttribute="trailing" id="ibe-3M-bpv"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FRx-3Z-zgB">
+                                                <rect key="frame" x="222" y="0.0" width="192" height="182"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="scale" translatesAutoresizingMaskIntoConstraints="NO" id="Xse-G6-7JQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="152"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Si8-Ru-VVe">
+                                                        <rect key="frame" x="0.0" y="152" width="192" height="30"/>
+                                                        <color key="backgroundColor" name="AppPinkPriority"/>
+                                                        <state key="normal" title="WEIGHT">
+                                                            <color key="titleColor" name="AppWhiteBg"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Si8-Ru-VVe" firstAttribute="leading" secondItem="FRx-3Z-zgB" secondAttribute="leading" id="Bc6-zQ-5Vj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Si8-Ru-VVe" secondAttribute="trailing" id="lSz-6Y-k5i"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="YAn-dC-hCc" userLabel="Yellow">
+                                        <rect key="frame" x="0.0" y="636" width="414" height="182"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TM3-lE-ZVP">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="182"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="exercise" translatesAutoresizingMaskIntoConstraints="NO" id="add-Ki-6DY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="148"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="786-wg-GF3">
+                                                        <rect key="frame" x="0.0" y="148" width="192" height="34"/>
+                                                        <color key="backgroundColor" name="AppPinkPriority"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="WORKOUT">
+                                                            <color key="titleColor" name="AppWhiteBg"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="786-wg-GF3" secondAttribute="trailing" id="3pW-7b-pCH"/>
+                                                    <constraint firstItem="786-wg-GF3" firstAttribute="leading" secondItem="TM3-lE-ZVP" secondAttribute="leading" id="zG4-Q1-lnm"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Aw8-Sn-08V">
+                                                <rect key="frame" x="222" y="0.0" width="192" height="182"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="gym" translatesAutoresizingMaskIntoConstraints="NO" id="PCM-kG-Hzw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="148"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GT4-h2-lep">
+                                                        <rect key="frame" x="0.0" y="148" width="192" height="34"/>
+                                                        <color key="backgroundColor" name="AppPinkPriority"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="BODY METRICS">
+                                                            <color key="titleColor" name="AppWhiteBg"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="GT4-h2-lep" firstAttribute="leading" secondItem="Aw8-Sn-08V" secondAttribute="leading" id="gSu-ok-uAF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GT4-h2-lep" secondAttribute="trailing" id="jvI-r6-cZl"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="AppLightPink"/>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Czn-mw-Ntd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Iz-qj-sVf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Czn-mw-Ntd" secondAttribute="bottom" id="TCe-WM-ueE"/>
+                            <constraint firstItem="Czn-mw-Ntd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="blX-Ed-dqV"/>
+                            <constraint firstItem="Czn-mw-Ntd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xC0-py-coL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="attitude" width="512" height="512"/>
+        <image name="exercise" width="512" height="512"/>
+        <image name="gym" width="512" height="512"/>
+        <image name="salad" width="512" height="512"/>
+        <image name="scale" width="512" height="512"/>
+        <image name="sleeping" width="512" height="512"/>
+        <namedColor name="AppLightPink">
+            <color red="0.96078431372549022" green="0.52156862745098043" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppPinkPriority">
+            <color red="1" green="0.12549019607843137" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppWhiteBg">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
