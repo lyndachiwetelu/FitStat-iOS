@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786BE22A26D92D8C00A6070A /* StatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */; };
+		786BE22B26D92D8C00A6070A /* StatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */; };
+		786BE22D26D9379300A6070A /* ShowStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22C26D9379300A6070A /* ShowStatsViewController.swift */; };
 		78BA0CD626D671FD00093DD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA0CD526D671FD00093DD8 /* AppDelegate.swift */; };
 		78BA0CD826D671FD00093DD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA0CD726D671FD00093DD8 /* SceneDelegate.swift */; };
 		78BA0CDA26D671FD00093DD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA0CD926D671FD00093DD8 /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListTableViewCell.swift; sourceTree = "<group>"; };
+		786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatListTableViewCell.xib; sourceTree = "<group>"; };
+		786BE22C26D9379300A6070A /* ShowStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStatsViewController.swift; sourceTree = "<group>"; };
 		78BA0CD226D671FD00093DD8 /* FitStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BA0CD526D671FD00093DD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78BA0CD726D671FD00093DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 				78DB1FE926D72915001B0A5A /* Colors.xcassets */,
 				78F0F2D326D7BAC60023B6B3 /* CheckBoxView.xib */,
 				78F0F2D526D7BAE50023B6B3 /* CheckBoxView.swift */,
+				786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */,
+				786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */,
 			);
 			path = FitStat;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 				78DB1FF526D79A0B001B0A5A /* AddWeightViewController.swift */,
 				78DB1FF726D79A3C001B0A5A /* AddBodyMetricViewController.swift */,
 				78DB1FF926D79A50001B0A5A /* AddMoodViewController.swift */,
+				786BE22C26D9379300A6070A /* ShowStatsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 				78BA0CE226D6720000093DD8 /* LaunchScreen.storyboard in Resources */,
 				78DB1FEA26D72916001B0A5A /* Colors.xcassets in Resources */,
 				78BA0CDF26D6720000093DD8 /* Assets.xcassets in Resources */,
+				786BE22B26D92D8C00A6070A /* StatListTableViewCell.xib in Resources */,
 				78F0F2D426D7BAC60023B6B3 /* CheckBoxView.xib in Resources */,
 				78BA0CDD26D671FD00093DD8 /* Main.storyboard in Resources */,
 			);
@@ -189,12 +199,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				78DB1FF826D79A3C001B0A5A /* AddBodyMetricViewController.swift in Sources */,
+				786BE22D26D9379300A6070A /* ShowStatsViewController.swift in Sources */,
 				78BA0CDA26D671FD00093DD8 /* ViewController.swift in Sources */,
 				78DB1FF226D7956F001B0A5A /* AddSleepViewController.swift in Sources */,
 				78BA0CD626D671FD00093DD8 /* AppDelegate.swift in Sources */,
 				78DB1FEE26D79255001B0A5A /* StatListViewController.swift in Sources */,
 				78DB1FF426D79617001B0A5A /* AddWorkoutViewController.swift in Sources */,
 				78DB1FF626D79A0B001B0A5A /* AddWeightViewController.swift in Sources */,
+				786BE22A26D92D8C00A6070A /* StatListTableViewCell.swift in Sources */,
 				78F0F2D626D7BAE50023B6B3 /* CheckBoxView.swift in Sources */,
 				78BA0CD826D671FD00093DD8 /* SceneDelegate.swift in Sources */,
 				78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */,

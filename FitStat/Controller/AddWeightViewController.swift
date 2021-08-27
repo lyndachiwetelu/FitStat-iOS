@@ -15,7 +15,10 @@ class AddWeightViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logWeightPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

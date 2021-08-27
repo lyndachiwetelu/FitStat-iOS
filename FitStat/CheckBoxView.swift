@@ -17,6 +17,7 @@ class CheckBoxView: UIView {
     var delegate: CheckBoxViewDelegate?
     
     var imageState = false
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

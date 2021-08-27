@@ -21,6 +21,9 @@ class AddFoodViewController: UIViewController {
     }
     
 
+    @IBAction func logFoodPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

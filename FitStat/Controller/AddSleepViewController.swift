@@ -19,7 +19,10 @@ class AddSleepViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logSleepPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

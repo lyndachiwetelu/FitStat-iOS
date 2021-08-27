@@ -15,7 +15,10 @@ class AddBodyMetricViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logMetricPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

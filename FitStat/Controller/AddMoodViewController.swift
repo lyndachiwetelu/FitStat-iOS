@@ -22,6 +22,10 @@ class AddMoodViewController: UIViewController {
         addGestureRecognizers()
     }
     
+    @IBAction func logMoodPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer) {
         let tag = gestureRecognizer.view?.tag
         blinkOpacity(for: gestureRecognizer.view)
