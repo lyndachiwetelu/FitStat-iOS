@@ -20,46 +20,47 @@
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m9V-py-V6U">
-                    <rect key="frame" x="44" y="0.0" width="852" height="393"/>
+                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" preservesSuperviewLayoutMargins="YES" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m9V-py-V6U">
+                    <rect key="frame" x="44" y="0.0" width="852" height="414"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYZ-aI-NPI">
-                            <rect key="frame" x="16" y="30" width="385.5" height="333"/>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYZ-aI-NPI">
+                            <rect key="frame" x="16" y="0.0" width="335" height="393"/>
                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="20" bottom="8" trailing="20"/>
                             <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                             <state key="normal" image="unchecked"/>
                             <connections>
                                 <action selector="checkBoxClicked:" destination="-1" eventType="touchUpInside" id="Vny-na-o1g"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A LABEL FOR YOU" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhj-xd-y4b">
-                            <rect key="frame" x="406.5" y="30" width="385.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="AppWhiteBg"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="A LABEL FOR YOU" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhj-xd-y4b">
+                            <rect key="frame" x="356" y="0.0" width="436" height="393"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" name="BoldGrayText"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <directionalEdgeInsets key="directionalLayoutMargins" top="30" leading="8" bottom="30" trailing="8"/>
+                    <constraints>
+                        <constraint firstItem="mYZ-aI-NPI" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Hhj-xd-y4b" secondAttribute="height" id="C76-k6-bcZ"/>
+                        <constraint firstItem="Hhj-xd-y4b" firstAttribute="width" secondItem="mYZ-aI-NPI" secondAttribute="width" multiplier="1.3" id="qeK-74-rj1"/>
+                    </constraints>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="AppWhitePrio"/>
             <constraints>
-                <constraint firstItem="m9V-py-V6U" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5gh-Zx-WOo"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="m9V-py-V6U" secondAttribute="bottom" id="5l7-bx-tTy"/>
-                <constraint firstItem="m9V-py-V6U" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="K9c-yn-mqV"/>
-                <constraint firstAttribute="trailing" secondItem="m9V-py-V6U" secondAttribute="trailing" id="QnB-mI-9Pu"/>
+                <constraint firstAttribute="bottom" secondItem="m9V-py-V6U" secondAttribute="bottom" id="04F-w5-42e"/>
+                <constraint firstItem="m9V-py-V6U" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wnn-7T-AJM"/>
+                <constraint firstItem="m9V-py-V6U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dNO-RP-18x"/>
+                <constraint firstAttribute="trailing" secondItem="m9V-py-V6U" secondAttribute="trailing" id="g4t-7x-dkx"/>
             </constraints>
             <point key="canvasLocation" x="24.637681159420293" y="73.660714285714278"/>
         </view>
     </objects>
     <resources>
         <image name="unchecked" width="1024" height="1024"/>
-        <namedColor name="AppWhiteBg">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="AppWhitePrio">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BoldGrayText">
+            <color red="0.53333333333333333" green="0.46666666666666667" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

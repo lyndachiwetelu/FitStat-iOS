@@ -9,8 +9,12 @@ import UIKit
 
 class AddSleepViewController: UIViewController {
 
+    @IBOutlet var lightSleepCheckBox: CheckBoxView!
+    @IBOutlet var heavySleepCheckBox: CheckBoxView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        lightSleepCheckBox.checkBoxLabel.text = "Light Sleep"
+        heavySleepCheckBox.checkBoxLabel.text = "Heavy Sleep"
 
         // Do any additional setup after loading the view.
     }

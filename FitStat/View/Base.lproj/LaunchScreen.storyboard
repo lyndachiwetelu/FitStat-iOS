@@ -27,7 +27,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" name="AppPinkPriority"/>
+                                <color key="backgroundColor" name="AppPink"/>
                                 <constraints>
                                     <constraint firstItem="IGi-s2-0eF" firstAttribute="centerY" secondItem="ues-ia-lTS" secondAttribute="centerY" id="3kU-0g-7bF"/>
                                     <constraint firstAttribute="trailing" secondItem="IGi-s2-0eF" secondAttribute="trailing" constant="91" id="GBw-nf-OY3"/>
@@ -51,9 +51,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="1024" height="1025"/>
-        <namedColor name="AppPinkPriority">
-            <color red="1" green="0.12549019607843137" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="Logo" width="1024" height="1024"/>
+        <namedColor name="AppPink">
+            <color red="0.0" green="0.58823529411764708" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -13,6 +13,8 @@ class AddFoodViewController: UIViewController {
     @IBOutlet var unhealthyCheckBoxView: CheckBoxView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        healthyCheckBoxView.delegate = self
+        unhealthyCheckBoxView.delegate = self
         healthyCheckBoxView.checkBoxLabel.text = "Healthy"
         unhealthyCheckBoxView.checkBoxLabel.text = "Unhealthy"
         // Do any additional setup after loading the view.
@@ -29,4 +31,18 @@ class AddFoodViewController: UIViewController {
     }
     */
 
+}
+
+
+extension AddFoodViewController: CheckBoxViewDelegate {
+    func checkBoxWasClicked(_ checkbox: CheckBoxView, with value: Bool) {
+        if checkbox.checkBoxLabel.text! == "Healthy" {
+            unhealthyCheckBoxView.change(to: !value)
+        }
+        
+        if checkbox.checkBoxLabel.text! == "Unhealthy" {
+            healthyCheckBoxView.change(to: !value)
+        }
+    }
+    
 }
