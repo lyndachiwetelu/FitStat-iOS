@@ -1,3 +1,7 @@
+### About this App
+FitStat is an app I am building for fun 🥳
+Ok but really, I want to track and see intelligent summaries of my wellness stats and that's what this app aims to do.
+
 ### Prerequisites
 - Xcode installed 
 - Cocoapods installed in your computer 

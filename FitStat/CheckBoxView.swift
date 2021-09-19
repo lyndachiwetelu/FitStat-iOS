@@ -40,14 +40,15 @@ class CheckBoxView: UIView {
             super.init(frame: frame)
             initSubviews()
         }
+    
 
         func initSubviews() {
             let nib = UINib(nibName: "CheckBoxView", bundle: nil)
             nib.instantiate(withOwner: self, options: nil)
             contentView.frame = bounds
             addSubview(contentView)
-          
         }
+    
     
     func change(to value: Bool) {
         imageState = value
