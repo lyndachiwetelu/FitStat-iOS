@@ -33,6 +33,13 @@ class UserDetailsViewController: UIViewController {
         heightUnitPicker.dataSource = self
         heightUnitPicker.delegate = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AppConstant.segueToMainView {
+            let dest = segue.destination as! UITabBarController
+            dest.modalPresentationStyle = .fullScreen
+        }
+    }
 
     @IBAction func continueButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: AppConstant.segueToMainView, sender: self)
