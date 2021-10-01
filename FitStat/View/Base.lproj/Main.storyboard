@@ -1854,7 +1854,7 @@
                         <outlet property="nameTextField" destination="1lB-wc-6kE" id="liN-5E-cdB"/>
                         <outlet property="weightTextField" destination="Zvl-58-dUk" id="dAW-Y8-SBl"/>
                         <outlet property="weightUnitPicker" destination="EXY-hf-ndc" id="dzw-zY-hxS"/>
-                        <segue destination="S4O-EI-tdX" kind="show" identifier="GoToMainView" id="hZe-dU-Tpv"/>
+                        <segue destination="S4O-EI-tdX" kind="showDetail" identifier="GoToMainView" id="hZe-dU-Tpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0M-Ic-Qe8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
