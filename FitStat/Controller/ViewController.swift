@@ -52,19 +52,19 @@ class ViewController: UIViewController {
     func getViewSegueId(tag: Int?) -> String {
         switch tag {
         case 100:
-            return "goToNextViewFood"
+            return AppConstant.segueToFoodView
         case 200:
-            return "goToNextViewSleep"
+            return AppConstant.segueToSleepView
         case 300:
-            return "goToNextViewMood"
+            return AppConstant.segueToMoodView
         case 400:
-            return "goToNextViewWeight"
+            return AppConstant.segueToWeightView
         case 500:
-            return "goToNextViewWorkout"
+            return AppConstant.segueToWorkoutView
         case 600:
-            return "goToNextViewMetric"
+            return AppConstant.segueToMetricView
         default:
-            return "goToNextViewFood"
+            return AppConstant.segueToFoodView
         }
     }
     
