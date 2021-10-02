@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserDetailsViewController: UIViewController {
+class UserDetailsViewController: UIViewController, UsesUserDefault {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var weightTextField: UITextField!
@@ -42,6 +42,15 @@ class UserDetailsViewController: UIViewController {
     }
 
     @IBAction func continueButtonPressed(_ sender: UIButton) {
+        let userDetails = [
+            "name": nameTextField.text ?? "Mystery Donda",
+            "weight": Int(weightTextField.text!) ?? 0,
+            "height": Int(heightTextField.text!) ?? 0,
+            "weightUnit": weightUnits[0],
+            "heightUnit": heightUnits[0]
+            
+        ] as [String : Any]
+        saveUserDefaultValue(userDetails, for: AppConstant.userDetailsKey)
         performSegue(withIdentifier: AppConstant.segueToMainView, sender: self)
     }
 }

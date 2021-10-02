@@ -18,5 +18,8 @@ struct AppConstant {
     static let segueToWeightView = "goToNextViewWeight"
     static let segueToWorkoutView = "goToNextViewWorkout"
     static let segueToMetricView = "goToNextViewMetric"
+    
+    //MARK: - Data Keys
+    static let userDetailsKey = "userDetails"
 
 }
