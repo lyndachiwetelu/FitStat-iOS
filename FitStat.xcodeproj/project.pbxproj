@@ -12,6 +12,7 @@
 		786BE22B26D92D8C00A6070A /* StatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */; };
 		786BE22D26D9379300A6070A /* ShowStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22C26D9379300A6070A /* ShowStatsViewController.swift */; };
 		7894EAC6270836E400ADEF47 /* CheckUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */; };
+		7894EAEC27086A7100ADEF47 /* FitStat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7894EAEA27086A7100ADEF47 /* FitStat.xcdatamodeld */; };
 		78B0529927079EDD00F95D7C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */; };
 		78B0529C2707A6A000F95D7C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529B2707A6A000F95D7C /* App.swift */; };
 		78B0529F2707ADAE00F95D7C /* UsesUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */; };
@@ -21,6 +22,7 @@
 		78BA0CDD26D671FD00093DD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BA0CDB26D671FD00093DD8 /* Main.storyboard */; };
 		78BA0CDF26D6720000093DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BA0CDE26D6720000093DD8 /* Assets.xcassets */; };
 		78BA0CE226D6720000093DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BA0CE026D6720000093DD8 /* LaunchScreen.storyboard */; };
+		78CD23DA270884CB00166490 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD23D9270884CB00166490 /* CoreDataManager.swift */; };
 		78DB1FEA26D72916001B0A5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DB1FE926D72915001B0A5A /* Colors.xcassets */; };
 		78DB1FEC26D7923D001B0A5A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FEB26D7923D001B0A5A /* SettingsViewController.swift */; };
 		78DB1FEE26D79255001B0A5A /* StatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FED26D79255001B0A5A /* StatListViewController.swift */; };
@@ -40,6 +42,7 @@
 		786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatListTableViewCell.xib; sourceTree = "<group>"; };
 		786BE22C26D9379300A6070A /* ShowStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStatsViewController.swift; sourceTree = "<group>"; };
 		7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserViewController.swift; sourceTree = "<group>"; };
+		7894EAEB27086A7100ADEF47 /* FitStat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitStat.xcdatamodel; sourceTree = "<group>"; };
 		78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		78B0529B2707A6A000F95D7C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsesUserDefault.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		78BA0CDE26D6720000093DD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78BA0CE126D6720000093DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78BA0CE326D6720000093DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78CD23D9270884CB00166490 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		78DB1FE926D72915001B0A5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		78DB1FEB26D7923D001B0A5A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		78DB1FED26D79255001B0A5A /* StatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +94,9 @@
 		78B0529A2707A68E00F95D7C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7894EAEA27086A7100ADEF47 /* FitStat.xcdatamodeld */,
 				78B0529B2707A6A000F95D7C /* App.swift */,
+				78CD23D9270884CB00166490 /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78DB1FF826D79A3C001B0A5A /* AddBodyMetricViewController.swift in Sources */,
+				7894EAEC27086A7100ADEF47 /* FitStat.xcdatamodeld in Sources */,
 				786BE22D26D9379300A6070A /* ShowStatsViewController.swift in Sources */,
 				78BA0CDA26D671FD00093DD8 /* ViewController.swift in Sources */,
 				78DB1FF226D7956F001B0A5A /* AddSleepViewController.swift in Sources */,
@@ -311,6 +318,7 @@
 				7894EAC6270836E400ADEF47 /* CheckUserViewController.swift in Sources */,
 				78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */,
 				78DB1FF026D7954A001B0A5A /* AddFoodViewController.swift in Sources */,
+				78CD23DA270884CB00166490 /* CoreDataManager.swift in Sources */,
 				78DB1FEC26D7923D001B0A5A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +523,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7894EAEA27086A7100ADEF47 /* FitStat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7894EAEB27086A7100ADEF47 /* FitStat.xcdatamodel */,
+			);
+			currentVersion = 7894EAEB27086A7100ADEF47 /* FitStat.xcdatamodel */;
+			path = FitStat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 78BA0CCA26D671FD00093DD8 /* Project object */;
 }

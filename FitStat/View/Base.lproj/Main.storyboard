@@ -430,8 +430,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log Food" id="EkY-fZ-x60"/>
                     <connections>
+                        <outlet property="caloriesTextField" destination="oNR-8O-2fI" id="Pb1-9h-wZW"/>
                         <outlet property="foodTypePicker" destination="nhS-MU-Apb" id="NM7-DB-ZLJ"/>
                         <outlet property="healthyCheckBoxView" destination="mAq-aW-mY2" id="QMa-kv-Xck"/>
+                        <outlet property="nameTextField" destination="1Vx-rg-LGA" id="KU3-2K-lGo"/>
                         <outlet property="unhealthyCheckBoxView" destination="Cg5-54-0zt" id="5mK-de-qbc"/>
                     </connections>
                 </viewController>
@@ -576,6 +578,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log Sleep" id="s6o-bw-r0S"/>
                     <connections>
+                        <outlet property="durationTextField" destination="Yxu-af-DqB" id="yyh-tu-cki"/>
                         <outlet property="heavySleepCheckBox" destination="C1S-Hl-sn0" id="49Q-2T-imC"/>
                         <outlet property="lightSleepCheckBox" destination="cb0-QT-4bE" id="alj-HY-RcK"/>
                         <outlet property="sleepTimePicker" destination="5kz-4v-0CD" id="fBe-wy-fmi"/>
