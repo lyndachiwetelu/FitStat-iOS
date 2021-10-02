@@ -434,6 +434,7 @@
                         <outlet property="foodTypePicker" destination="nhS-MU-Apb" id="NM7-DB-ZLJ"/>
                         <outlet property="healthyCheckBoxView" destination="mAq-aW-mY2" id="QMa-kv-Xck"/>
                         <outlet property="nameTextField" destination="1Vx-rg-LGA" id="KU3-2K-lGo"/>
+                        <outlet property="timePicker" destination="Mid-m0-hta" id="fNW-tQ-48I"/>
                         <outlet property="unhealthyCheckBoxView" destination="Cg5-54-0zt" id="5mK-de-qbc"/>
                     </connections>
                 </viewController>
@@ -578,6 +579,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log Sleep" id="s6o-bw-r0S"/>
                     <connections>
+                        <outlet property="datePicker" destination="pTe-rr-7CY" id="zdy-qX-woi"/>
                         <outlet property="durationTextField" destination="Yxu-af-DqB" id="yyh-tu-cki"/>
                         <outlet property="heavySleepCheckBox" destination="C1S-Hl-sn0" id="49Q-2T-imC"/>
                         <outlet property="lightSleepCheckBox" destination="cb0-QT-4bE" id="alj-HY-RcK"/>
@@ -718,6 +720,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log Weight" id="upv-Zs-rUf"/>
                     <connections>
+                        <outlet property="timePicker" destination="fgd-cz-66h" id="6oa-lr-N84"/>
+                        <outlet property="weightTextField" destination="Gfs-bl-Sfw" id="9Xx-NO-Phs"/>
                         <outlet property="weightUnitPicker" destination="keG-B6-npH" id="gbh-pY-WcB"/>
                     </connections>
                 </viewController>
@@ -893,6 +897,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log Workout" id="s0R-DC-OLz"/>
                     <connections>
+                        <outlet property="caloriesTextField" destination="U4N-7H-czc" id="fnP-6T-i1o"/>
+                        <outlet property="datePicker" destination="L5m-Gf-Wxc" id="PDP-wO-OJJ"/>
+                        <outlet property="durationTextField" destination="4LM-1h-t4y" id="36p-sc-CfF"/>
+                        <outlet property="nameTextField" destination="nSW-hz-hB2" id="XFM-3a-UjD"/>
                         <outlet property="workoutTimePicker" destination="Nf3-oj-4sW" id="JVM-5Z-HUj"/>
                     </connections>
                 </viewController>
@@ -1093,6 +1101,7 @@
                     <navigationItem key="navigationItem" title="Log Mood" id="UOr-IR-ddS"/>
                     <connections>
                         <outlet property="contentStackView" destination="De7-VD-d1N" id="rQJ-HY-Fqi"/>
+                        <outlet property="datePicker" destination="KQF-Qi-724" id="LRZ-cm-DnW"/>
                         <outlet property="depressedStackView" destination="qNV-ad-k4W" id="ZgM-JL-fMN"/>
                         <outlet property="happyStackView" destination="egk-qh-VLg" id="dKG-4D-Wib"/>
                         <outlet property="indifferentStackView" destination="ysU-82-6rF" id="ekO-XO-9lS"/>
@@ -1245,7 +1254,9 @@
                     <navigationItem key="navigationItem" title="Log Body Metric" id="zni-wJ-rIA"/>
                     <connections>
                         <outlet property="partOfBodyPicker" destination="Lu2-Ze-GtV" id="CLz-7r-HNm"/>
+                        <outlet property="timePicker" destination="vFk-rL-JVn" id="MrU-mO-tgp"/>
                         <outlet property="unitPicker" destination="TsJ-Iq-7Bb" id="THI-NT-jpj"/>
+                        <outlet property="valueTextField" destination="2eb-ep-EYo" id="kXc-47-TRb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUB-lJ-jFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

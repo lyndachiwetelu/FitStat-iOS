@@ -22,25 +22,6 @@ class ViewController: UIViewController, UsesUserDefault {
         addGestureRecognizers()
         let user = getUserDefaultValue(for: AppConstant.userDetailsKey)!
         navigationItem.title = "FitStat: \(user["name"] ?? ""): \(user["weight"] ?? "")"
-//        var manager = CoreDataManager()
-//        let foods = manager.fetchFoods()
-//        guard foods != nil else {
-//            return
-//        }
-//        
-//        for food in foods! {
-//            print("Food Logs \(food.name)")
-//        }
-//        
-//        let sleeps = manager.fetchSleeps()
-//        guard sleeps != nil else {
-//            return
-//        }
-//        
-//        for sleep in sleeps! {
-//            print("Sleep Logs \(sleep.duration) \(sleep.durationUnit)")
-//        }
-        
     }
     
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer) {

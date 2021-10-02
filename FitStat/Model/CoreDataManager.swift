@@ -21,6 +21,12 @@ struct CoreDataManager {
         return container
     }()
     
+    mutating func getInsertObjectFor(entityNamed: String) -> NSManagedObject {
+        let context = persistentContainer.viewContext
+        let object = NSEntityDescription.insertNewObject(forEntityName: entityNamed, into: context)
+        return object
+    }
+    
     mutating func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -60,6 +66,42 @@ struct CoreDataManager {
     mutating func fetchMoods() -> [Mood]? {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Mood>(entityName: "Mood")
+        do {
+            let logs = try context.fetch(fetchRequest)
+            return logs
+        } catch {
+            print("Error fetching: \(String(describing: error))")
+            return nil
+        }
+    }
+    
+    mutating func fetchWeights() -> [Weight]? {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Weight>(entityName: "Weight")
+        do {
+            let logs = try context.fetch(fetchRequest)
+            return logs
+        } catch {
+            print("Error fetching: \(String(describing: error))")
+            return nil
+        }
+    }
+    
+    mutating func fetchWorkouts() -> [Workout]? {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Workout>(entityName: "Workout")
+        do {
+            let logs = try context.fetch(fetchRequest)
+            return logs
+        } catch {
+            print("Error fetching: \(String(describing: error))")
+            return nil
+        }
+    }
+    
+    mutating func fetchMetrics() -> [Metric]? {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Metric>(entityName: "Metric")
         do {
             let logs = try context.fetch(fetchRequest)
             return logs

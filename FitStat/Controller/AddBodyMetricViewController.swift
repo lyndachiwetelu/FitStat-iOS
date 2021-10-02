@@ -11,12 +11,16 @@ class AddBodyMetricViewController: UIViewController {
 
     @IBOutlet var partOfBodyPicker: UIPickerView!
     @IBOutlet var unitPicker: UIPickerView!
+    @IBOutlet var timePicker: UIDatePicker!
     
+    @IBOutlet var valueTextField: UITextField!
     var units = [
         "metres",
         "centimeters",
         "inches",
     ]
+    
+    var selectedUnit = "centimeters"
     
     var parts = [
         "Chest",
@@ -29,6 +33,8 @@ class AddBodyMetricViewController: UIViewController {
         "Belly"
     ]
     
+    var selectedPart = "Chest"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         partOfBodyPicker.delegate = self
@@ -38,6 +44,13 @@ class AddBodyMetricViewController: UIViewController {
     }
     
     @IBAction func logMetricPressed(_ sender: UIButton) {
+        var manager = CoreDataManager.shared
+        let metric = manager.getInsertObjectFor(entityNamed: "Metric") as! Metric
+        metric.time = timePicker.date
+        metric.value = Float(valueTextField.text ?? "")!
+        metric.unit = selectedUnit
+        metric.part = selectedPart
+        manager.saveContext()
         navigationController?.popViewController(animated: true)
     }
 
@@ -51,6 +64,15 @@ extension AddBodyMetricViewController: UIPickerViewDelegate {
             return parts[row]
         default:
             return units[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView.tag {
+        case 100:
+            selectedPart = parts[row]
+        default:
+            selectedUnit = units[row]
         }
     }
     

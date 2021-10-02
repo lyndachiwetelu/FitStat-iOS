@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class AddFoodViewController: UIViewController {
 
@@ -15,6 +14,7 @@ class AddFoodViewController: UIViewController {
     @IBOutlet var foodTypePicker: UIPickerView!
     @IBOutlet var caloriesTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var timePicker: UIDatePicker!
     
     var selectedFoodType: String?
     var healthy: String = "Healthy"
@@ -39,12 +39,11 @@ class AddFoodViewController: UIViewController {
 
     @IBAction func logFoodPressed(_ sender: UIButton) {
         var manager = CoreDataManager.shared
-        let context = manager.persistentContainer.viewContext
-        let food = NSEntityDescription.insertNewObject(forEntityName: "Food", into: context) as! Food
+        let food = manager.getInsertObjectFor(entityNamed: "Food") as! Food
         food.calories = Int16(Int(caloriesTextField.text ?? "")!)
         food.name = nameTextField.text ?? ""
         food.type = selectedFoodType ?? "Breakfast"
-        food.time = Date()
+        food.time = timePicker.date
         food.healthy = healthy == "Healthy"
         manager.saveContext()
 

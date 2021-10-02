@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import CoreData
 
 class AddSleepViewController: UIViewController {
 
+    @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var durationTextField: UITextField!
     @IBOutlet var lightSleepCheckBox: CheckBoxView!
     @IBOutlet var heavySleepCheckBox: CheckBoxView!
@@ -35,9 +35,8 @@ class AddSleepViewController: UIViewController {
     
     @IBAction func logSleepPressed(_ sender: UIButton) {
         var manager = CoreDataManager.shared
-        let context = manager.persistentContainer.viewContext
-        let sleep = NSEntityDescription.insertNewObject(forEntityName: "Sleep", into: context) as! Sleep
-        sleep.time = Date()
+        let sleep = manager.getInsertObjectFor(entityNamed: "Sleep") as! Sleep
+        sleep.time = datePicker.date
         sleep.duration = Int16(Int(durationTextField.text ?? "")!)
         sleep.durationUnit = selectedUnit
         sleep.light = light == "Light"

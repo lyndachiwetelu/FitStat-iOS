@@ -15,7 +15,10 @@ class AddMoodViewController: UIViewController {
     @IBOutlet var contentStackView: UIStackView!
     @IBOutlet var depressedStackView: UIStackView!
     
+    @IBOutlet var datePicker: UIDatePicker!
     var views : [UIView?] { [ joyfulStackView, indifferentStackView, happyStackView, sadStackView, contentStackView, depressedStackView ] }
+    
+    var selectedMood = "None"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,11 @@ class AddMoodViewController: UIViewController {
     }
     
     @IBAction func logMoodPressed(_ sender: UIButton) {
+        var manager = CoreDataManager.shared
+        let mood = manager.getInsertObjectFor(entityNamed: "Mood") as! Mood
+        mood.time = datePicker.date
+        mood.mood = selectedMood
+        manager.saveContext()
         navigationController?.popViewController(animated: true)
     }
     
@@ -32,7 +40,27 @@ class AddMoodViewController: UIViewController {
         gestureRecognizer.view?.layer.borderWidth = 3
         gestureRecognizer.view?.layer.borderColor = UIColor(named: "AppLightPinkPriority")?.cgColor
         removeHighlightForAll(except: tag!)
+        setSelectedMood(tag: tag!)
 
+    }
+    
+    func setSelectedMood(tag: Int) {
+        switch tag {
+            case 100:
+            selectedMood = "Joyful"
+            case 200:
+            selectedMood = "Indifferent"
+            case 300:
+            selectedMood = "Happy"
+            case 400:
+            selectedMood = "Happy"
+            case 500:
+            selectedMood = "Content"
+            case 600:
+            selectedMood = "Depressed"
+        default:
+            selectedMood = "None"
+        }
     }
     
     func addGestureRecognizers() {
@@ -56,16 +84,5 @@ class AddMoodViewController: UIViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -9,12 +9,18 @@ import UIKit
 
 class AddWorkoutViewController: UIViewController {
 
+    @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var workoutTimePicker: UIPickerView!
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var caloriesTextField: UITextField!
     
+    @IBOutlet var durationTextField: UITextField!
     var times = [
         "Hours",
         "Minutes"
     ]
+    
+    var selectedTime = "Hours"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +29,15 @@ class AddWorkoutViewController: UIViewController {
     }
     
     @IBAction func logWorkoutPressed(_ sender: UIButton) {
+        var manager = CoreDataManager.shared
+        let workout = manager.getInsertObjectFor(entityNamed: "Workout") as! Workout
+        workout.time = datePicker.date
+        workout.durationUnit = selectedTime
+        workout.duration = Int16(Int(durationTextField.text ?? "")!)
+        workout.calories = Int16(Int(caloriesTextField.text ?? "")!)
+        workout.name = nameTextField.text ?? "Unspecified"
+        manager.saveContext()
+        
         navigationController?.popViewController(animated: true)
     }
 
@@ -31,6 +46,10 @@ class AddWorkoutViewController: UIViewController {
 extension AddWorkoutViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return times[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedTime = times[row]
     }
 }
 
