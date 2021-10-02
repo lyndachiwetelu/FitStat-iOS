@@ -240,12 +240,9 @@
                     <navigationItem key="navigationItem" title="Fitstat Logs" id="pSO-8k-G1M"/>
                     <connections>
                         <outlet property="bodyMetricView" destination="Aw8-Sn-08V" id="NXq-2f-kYw"/>
-                        <outlet property="firstStack" destination="aJa-ds-HJo" id="C4s-h9-5ZS"/>
                         <outlet property="foodView" destination="H5j-mq-DWA" id="Qe5-9w-Shu"/>
                         <outlet property="moodView" destination="GfX-jR-94B" id="8lU-l1-ESs"/>
-                        <outlet property="secondStack" destination="q5V-W5-Bta" id="9Ws-aI-HBN"/>
                         <outlet property="sleepingView" destination="Qre-1a-W2D" id="9SF-2f-spO"/>
-                        <outlet property="thirdStack" destination="YAn-dC-hCc" id="3r4-zr-vgi"/>
                         <outlet property="weightView" destination="FRx-3Z-zgB" id="kWc-u7-gEn"/>
                         <outlet property="workoutView" destination="TM3-lE-ZVP" id="yc1-wv-h3X"/>
                     </connections>
@@ -599,46 +596,44 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax0-85-3D3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3r-0Z-vpf">
-                                        <rect key="frame" x="20" y="61" width="414" height="725"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="AppWhiteBg"/>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NPw-oW-5o2" userLabel="Main Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NPw-oW-5o2" userLabel="Main Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weights" translatesAutoresizingMaskIntoConstraints="NO" id="GVk-9p-BRB">
-                                                <rect key="frame" x="30" y="8" width="354" height="150.33333333333334"/>
+                                                <rect key="frame" x="30" y="8" width="354" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="RZk-Yz-p26"/>
+                                                </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2QH-ic-gto">
-                                                <rect key="frame" x="30" y="166.33333333333331" width="354" height="150.33333333333331"/>
+                                                <rect key="frame" x="30" y="138" width="354" height="69.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Date is the weight for?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0J-Db-YoE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="150.33333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="69.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="BoldGrayText"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fgd-cz-66h">
-                                                        <rect key="frame" x="177" y="0.0" width="177" height="150.33333333333334"/>
+                                                        <rect key="frame" x="177" y="0.0" width="177" height="69.333333333333329"/>
                                                         <color key="tintColor" name="AppWhiteBGDark"/>
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mgi-qT-PJx">
-                                                <rect key="frame" x="30" y="324.66666666666669" width="354" height="150.66666666666669"/>
+                                                <rect key="frame" x="30" y="237.33333333333331" width="354" height="91"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6gT-2M-yLs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="150.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="91"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9g-gc-TXb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="93.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="BoldGrayText"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gfs-bl-Sfw">
-                                                                <rect key="frame" x="0.0" y="93.666666666666629" width="169.66666666666666" height="57"/>
+                                                                <rect key="frame" x="0.0" y="34" width="169.66666666666666" height="57"/>
                                                                 <color key="backgroundColor" name="InputBG"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="57" id="0iu-NQ-Iqc"/>
@@ -650,63 +645,23 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pgZ-1s-sft">
-                                                        <rect key="frame" x="184.66666666666663" y="0.0" width="169.33333333333337" height="150.66666666666666"/>
+                                                        <rect key="frame" x="184.66666666666663" y="0.0" width="169.33333333333337" height="91"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEt-sN-r5c">
-                                                                <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="75.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="45.333333333333336"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="BoldGrayText"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView tag="100" contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="keG-B6-npH">
-                                                                <rect key="frame" x="0.0" y="75.333333333333314" width="169.33333333333334" height="75.333333333333314"/>
-                                                            </pickerView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="E2Q-k2-0gH">
-                                                <rect key="frame" x="30" y="483.33333333333331" width="354" height="150.33333333333331"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mrL-MU-plX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="150.33333333333334"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcY-Sb-Obc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="93.333333333333329"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" name="BoldGrayText"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V65-KG-v5J">
-                                                                <rect key="frame" x="0.0" y="93.333333333333258" width="169.66666666666666" height="57"/>
-                                                                <color key="backgroundColor" name="InputBG"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="57" id="FRO-8P-o5c"/>
-                                                                </constraints>
-                                                                <color key="textColor" name="AppInputText"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ato-8K-KR2">
-                                                        <rect key="frame" x="184.66666666666663" y="0.0" width="169.33333333333337" height="150.33333333333334"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFi-l2-8xf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="75"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" name="BoldGrayText"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <pickerView tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9p-GG-N3n">
-                                                                <rect key="frame" x="0.0" y="75" width="169.33333333333334" height="75.333333333333314"/>
+                                                                <rect key="frame" x="0.0" y="45.333333333333371" width="169.33333333333334" height="45.666666666666657"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G70-YU-lWJ">
-                                                <rect key="frame" x="30" y="641.66666666666663" width="354" height="150.33333333333337"/>
+                                                <rect key="frame" x="30" y="358.33333333333326" width="354" height="433.66666666666674"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nce-Fy-3b8">
                                                         <rect key="frame" x="0.0" y="30" width="354" height="55"/>
@@ -760,7 +715,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log Weight" id="upv-Zs-rUf"/>
                     <connections>
-                        <outlet property="heightUnitPicker" destination="M9p-GG-N3n" id="u7g-hW-cQ3"/>
                         <outlet property="weightUnitPicker" destination="keG-B6-npH" id="gbh-pY-WcB"/>
                     </connections>
                 </viewController>

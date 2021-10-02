@@ -17,16 +17,9 @@ class ViewController: UIViewController, UsesUserDefault {
     @IBOutlet var bodyMetricView: UIStackView!
     
     
-    @IBOutlet var firstStack: UIStackView!
-    @IBOutlet var secondStack: UIStackView!
-    @IBOutlet var thirdStack: UIStackView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addGestureRecognizers()
-        firstStack.translatesAutoresizingMaskIntoConstraints = false
-        secondStack.translatesAutoresizingMaskIntoConstraints = false
-        thirdStack.translatesAutoresizingMaskIntoConstraints = false
         let user = getUserDefaultValue(for: AppConstant.userDetailsKey)!
         navigationItem.title = "FitStat: \(user["name"] ?? ""): \(user["weight"] ?? "")"
     }

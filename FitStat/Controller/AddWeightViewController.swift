@@ -10,24 +10,17 @@ import UIKit
 class AddWeightViewController: UIViewController {
 
     @IBOutlet var weightUnitPicker: UIPickerView!
-    @IBOutlet var heightUnitPicker: UIPickerView!
     
     var weightUnits = [
         "Kilograms",
         "Pounds"
     ]
     
-    var heightUnits = [
-        "metres",
-        "centimeters",
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         weightUnitPicker.delegate = self
         weightUnitPicker.dataSource = self
-        heightUnitPicker.delegate = self
-        heightUnitPicker.dataSource = self
     }
     
     @IBAction func logWeightPressed(_ sender: UIButton) {
@@ -42,12 +35,7 @@ extension AddWeightViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch pickerView.tag {
-        case 100:
-            return weightUnits.count
-        default:
-            return heightUnits.count
-        }
+        return weightUnits.count
     }
     
     
@@ -55,13 +43,7 @@ extension AddWeightViewController: UIPickerViewDataSource {
 
 extension AddWeightViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch pickerView.tag {
-        case 100:
-            return weightUnits[row]
-        default:
-            return heightUnits[row]
-        }
-        
+        return weightUnits[row]
     }
 }
 
