@@ -15,6 +15,9 @@ class UserDetailsViewController: UIViewController, UsesUserDefault {
     @IBOutlet var weightUnitPicker: UIPickerView!
     @IBOutlet var heightUnitPicker: UIPickerView!
     
+    var selectedWeightUnit: String?
+    var selectedHeightUnit: String?
+    
     var weightUnits = [
         "Kilograms",
         "Pounds"
@@ -44,10 +47,10 @@ class UserDetailsViewController: UIViewController, UsesUserDefault {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
         let userDetails = [
             "name": nameTextField.text ?? "Mystery Donda",
-            "weight": Int(weightTextField.text!) ?? 0,
+            "weight": Float(weightTextField.text!) ?? 0,
             "height": Int(heightTextField.text!) ?? 0,
-            "weightUnit": weightUnits[0],
-            "heightUnit": heightUnits[0]
+            "weightUnit": selectedWeightUnit ?? "Kilograms",
+            "heightUnit": selectedHeightUnit ?? "centimeters"
             
         ] as [String : Any]
         saveUserDefaultValue(userDetails, for: AppConstant.userDetailsKey)
@@ -80,7 +83,15 @@ extension UserDetailsViewController: UIPickerViewDelegate{
         default:
             return heightUnits[row]
         }
-        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView.tag {
+        case 100:
+            selectedWeightUnit = weightUnits[row]
+        default:
+            selectedHeightUnit = heightUnits[row]
+        }
     }
 }
 

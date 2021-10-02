@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UsesUserDefault {
 
     @IBOutlet var weightView: UIStackView!
     @IBOutlet var moodView: UIStackView!
@@ -19,10 +19,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addGestureRecognizers()
+        let user = getUserDefaultValue(for: AppConstant.userDetailsKey)!
+        navigationItem.title = "FitStat: \(user["name"] ?? ""): \(user["weight"] ?? "")"
     }
     
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer) {
-//        let tag = gestureRecognizer.view?.tag
         blinkOpacity(for: gestureRecognizer.view)
         performTimedSegue(withId: getViewSegueId(tag: gestureRecognizer.view?.tag))
        

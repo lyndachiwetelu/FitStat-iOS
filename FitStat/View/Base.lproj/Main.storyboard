@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pfg-CO-zsH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JFD-90-ojK">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1725,11 +1725,11 @@
             <objects>
                 <viewController id="Pfg-CO-zsH" customClass="UserDetailsViewController" customModule="FitStat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZJd-yP-mBk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0t4-9c-48R" userLabel="Main Stack View">
-                                <rect key="frame" x="0.0" y="150" width="414" height="596"/>
+                                <rect key="frame" x="0.0" y="123" width="414" height="596"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="T8B-Cu-11I">
                                         <rect key="frame" x="20" y="8" width="374" height="80"/>
@@ -1859,7 +1859,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0M-Ic-Qe8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3736.2318840579715" y="-307.36607142857139"/>
+            <point key="canvasLocation" x="-3793" y="-13"/>
+        </scene>
+        <!--Check User View Controller-->
+        <scene sceneID="Rap-T9-k7E">
+            <objects>
+                <viewController id="JFD-90-ojK" customClass="CheckUserViewController" customModule="FitStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dS2-qf-ZcY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kt-Mm-mXo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" name="AppPink"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ILi-9r-RbM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ILi-9r-RbM" firstAttribute="trailing" secondItem="2kt-Mm-mXo" secondAttribute="trailing" id="N6c-Yo-hsw"/>
+                            <constraint firstItem="2kt-Mm-mXo" firstAttribute="leading" secondItem="ILi-9r-RbM" secondAttribute="leading" id="UFs-kP-U2r"/>
+                            <constraint firstItem="2kt-Mm-mXo" firstAttribute="top" secondItem="ILi-9r-RbM" secondAttribute="top" id="jls-Ka-7RP"/>
+                            <constraint firstItem="ILi-9r-RbM" firstAttribute="bottom" secondItem="2kt-Mm-mXo" secondAttribute="bottom" id="sSC-zp-fTP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="Pfg-CO-zsH" kind="showDetail" identifier="GoToUserDetails" id="KWv-aO-EeW"/>
+                        <segue destination="S4O-EI-tdX" kind="showDetail" identifier="GoToMainView" id="onR-dw-qrp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCm-gm-Z6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4722" y="-242"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2FK-jo-fPr">
@@ -1943,6 +1974,9 @@
             <point key="canvasLocation" x="-852" y="-223"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="onR-dw-qrp"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="1024" height="1024"/>
         <image name="body" width="512" height="512"/>

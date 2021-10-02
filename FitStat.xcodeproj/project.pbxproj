@@ -11,6 +11,7 @@
 		786BE22A26D92D8C00A6070A /* StatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */; };
 		786BE22B26D92D8C00A6070A /* StatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */; };
 		786BE22D26D9379300A6070A /* ShowStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22C26D9379300A6070A /* ShowStatsViewController.swift */; };
+		7894EAC6270836E400ADEF47 /* CheckUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */; };
 		78B0529927079EDD00F95D7C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */; };
 		78B0529C2707A6A000F95D7C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529B2707A6A000F95D7C /* App.swift */; };
 		78B0529F2707ADAE00F95D7C /* UsesUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */; };
@@ -38,6 +39,7 @@
 		786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListTableViewCell.swift; sourceTree = "<group>"; };
 		786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatListTableViewCell.xib; sourceTree = "<group>"; };
 		786BE22C26D9379300A6070A /* ShowStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStatsViewController.swift; sourceTree = "<group>"; };
+		7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserViewController.swift; sourceTree = "<group>"; };
 		78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		78B0529B2707A6A000F95D7C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsesUserDefault.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				78DB1FF926D79A50001B0A5A /* AddMoodViewController.swift */,
 				786BE22C26D9379300A6070A /* ShowStatsViewController.swift */,
 				78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */,
+				7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				78B0529F2707ADAE00F95D7C /* UsesUserDefault.swift in Sources */,
 				78F0F2D626D7BAE50023B6B3 /* CheckBoxView.swift in Sources */,
 				78BA0CD826D671FD00093DD8 /* SceneDelegate.swift in Sources */,
+				7894EAC6270836E400ADEF47 /* CheckUserViewController.swift in Sources */,
 				78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */,
 				78DB1FF026D7954A001B0A5A /* AddFoodViewController.swift in Sources */,
 				78DB1FEC26D7923D001B0A5A /* SettingsViewController.swift in Sources */,

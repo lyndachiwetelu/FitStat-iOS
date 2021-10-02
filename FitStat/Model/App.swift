@@ -11,6 +11,7 @@ struct AppConstant {
     
     //MARK: - Segues
     static let segueToMainView = "GoToMainView"
+    static let segueToUserDetailsView = "GoToUserDetails"
     
     static let segueToFoodView = "goToNextViewFood"
     static let segueToSleepView = "goToNextViewSleep"

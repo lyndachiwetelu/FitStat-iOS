@@ -8,13 +8,13 @@
 import Foundation
 
 protocol UsesUserDefault {
-    func getUserDefaultValue(for key: String) -> Any
+    func getUserDefaultValue(for key: String) -> [String: Any]?
     func saveUserDefaultValue(_ value: Any, for key: String)
 }
 
 extension UsesUserDefault {
-    func getUserDefaultValue(for key: String) -> Any {
-        return UserDefaults.standard.value(forKey: key) as Any
+    func getUserDefaultValue(for key: String) -> [String: Any]? {
+        return UserDefaults.standard.value(forKey: key) as? [String: Any]
     }
     
     func saveUserDefaultValue(_ value: Any, for key: String) {
