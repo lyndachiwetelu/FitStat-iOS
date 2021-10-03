@@ -21,15 +21,26 @@ class ShowStatsViewController: UIViewController {
         let dataSet = LineChartDataSet(entries: fetchFoods(), label: "Your Food Statistics");
         dataSet.setColor(.blue)
         dataSet.valueTextColor = .systemPink
+        let gradientColors = [UIColor.systemPink.cgColor, UIColor.clear.cgColor] as CFArray
+        let colorLocations: [CGFloat] = [0.0, 1.0]
+        guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) else {
+            return
+        }
+        dataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 80.0)
+        dataSet.drawFilledEnabled = true
         
         let lineChartData = LineChartData(dataSet: dataSet)
         let chart = LineChartView()
         chart.data = lineChartData
         let formatter = XAxisNameFormater()
+        chart.xAxis.drawGridLinesEnabled = false
+        chart.leftAxis.drawGridLinesEnabled = false
         chart.xAxis.valueFormatter = formatter
         chart.xAxis.labelPosition = .bottom
         chart.leftAxis.labelPosition = .outsideChart
         chart.rightAxis.enabled = false
+        chart.legend.enabled = true
+        chart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
         chart.frame = CGRect(x: 0, y: 300, width: view.frame.width, height: 300)
         view.addSubview(chart)
         statsLabel.text = ""
@@ -39,8 +50,6 @@ class ShowStatsViewController: UIViewController {
         let foods = manager.fetchFoods()
         var groupByDay = [FoodChartEntry]()
         var entries = [ChartDataEntry]()
-        
-       
         
         for f in foods! {
             let day = getDayStringFromDate(date: f.time!)
