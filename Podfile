@@ -7,4 +7,5 @@ target 'FitStat' do
 
   # Pods for FitStat
 pod 'IQKeyboardManagerSwift'
+pod 'Charts'
 end

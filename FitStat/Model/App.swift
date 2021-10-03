@@ -24,3 +24,8 @@ struct AppConstant {
     static let userDetailsKey = "userDetails"
 
 }
+
+struct FoodChartEntry {
+    var date: Date
+    var calories: Int
+}

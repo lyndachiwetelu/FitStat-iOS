@@ -42,6 +42,9 @@ struct CoreDataManager {
     mutating func fetchFoods() -> [Food]? {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Food>(entityName: "Food")
+        let sectionSortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         do {
             let logs = try context.fetch(fetchRequest)
             return logs

@@ -19,17 +19,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="uxn-pr-EWk">
-                        <rect key="frame" x="0.0" y="0.0" width="321" height="122"/>
+                        <rect key="frame" x="20" y="0.0" width="301" height="122"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wNQ-Zd-D0t">
-                                <rect key="frame" x="30" y="0.0" width="100" height="122"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="FPV-Pj-uyz"/>
                                     <constraint firstAttribute="width" constant="100" id="zQA-Cv-Gwo"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kua-HS-s2I">
-                                <rect key="frame" x="130" y="0.0" width="191" height="122"/>
+                                <rect key="frame" x="100" y="0.0" width="201" height="122"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" name="AppWhiteBGDark"/>
                                 <nil key="highlightedColor"/>
@@ -37,16 +37,16 @@
                         </subviews>
                         <color key="backgroundColor" name="AppWhiteBg"/>
                         <constraints>
-                            <constraint firstItem="wNQ-Zd-D0t" firstAttribute="top" secondItem="uxn-pr-EWk" secondAttribute="top" constant="30" id="QxG-rh-7PR"/>
+                            <constraint firstItem="wNQ-Zd-D0t" firstAttribute="top" secondItem="uxn-pr-EWk" secondAttribute="top" id="QxG-rh-7PR"/>
+                            <constraint firstItem="wNQ-Zd-D0t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uxn-pr-EWk" secondAttribute="leading" priority="999" constant="20" id="cfy-u1-q4H"/>
                             <constraint firstItem="kua-HS-s2I" firstAttribute="leading" secondItem="wNQ-Zd-D0t" secondAttribute="trailing" id="hlB-1D-6p5"/>
-                            <constraint firstItem="wNQ-Zd-D0t" firstAttribute="leading" secondItem="uxn-pr-EWk" secondAttribute="leading" constant="30" id="nzV-mN-PtV"/>
                         </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="uxn-pr-EWk" secondAttribute="trailing" id="3mx-At-sl9"/>
                     <constraint firstItem="uxn-pr-EWk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nue-sz-KdO"/>
-                    <constraint firstItem="uxn-pr-EWk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VZ2-TW-qnq"/>
+                    <constraint firstItem="uxn-pr-EWk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="iSn-3M-aGV"/>
                     <constraint firstAttribute="bottom" secondItem="uxn-pr-EWk" secondAttribute="bottom" id="rhZ-VX-4dL"/>
                 </constraints>
             </tableViewCellContentView>
