@@ -25,7 +25,22 @@ struct AppConstant {
 
 }
 
+// stats
+struct Stats {
+    static let food = "Food Stats"
+    static let sleep = "Sleep Stats"
+    static let weight = "Weight Stats"
+    static let workout = "Workout Stats"
+    static let mood = "Mood Stats"
+    static let metric = "Body Metrics Stats"
+}
+
 struct FoodChartEntry {
     var date: Date
     var calories: Int
+}
+
+struct SleepChartEntry {
+    var date: Date
+    var hours: Float
 }

@@ -10,46 +10,21 @@ import Charts
 
 
 class ShowStatsViewController: UIViewController {    
-    var statsText = ""
     
+
+    @IBOutlet var headingLabel: UILabel!
     @IBOutlet var statsViewer: UIView!
-    var manager = CoreDataManager()
+    var statsText = ""
+    var lineChartDataSets = [LineChartDataSet]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dataSet = LineChartDataSet(entries: fetchFoods(), label: "Your Food Statistics");
         let chart = FLineChartView()
-        chart.lineChartDataSet = dataSet
+        chart.lineChartDataSets = lineChartDataSets
         statsViewer.addSubview(chart)
+        headingLabel.text = "Your \(statsText) at a glance"
     }
     
-    func fetchFoods() -> [ChartDataEntry] {
-        let foods = manager.fetchFoods()
-        var groupByDay = [FoodChartEntry]()
-        var entries = [ChartDataEntry]()
-        
-        for f in foods! {
-            let day = getDayStringFromDate(date: f.time!)
-            if var dayVal = groupByDay.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                dayVal.calories += Int(f.calories)
-            } else {
-                let foodChartEntry = FoodChartEntry(date: f.time!, calories: Int(f.calories))
-                groupByDay.append(foodChartEntry)
-            }
-        }
-        
-        for val in groupByDay {
-            let entry = ChartDataEntry(x: Double(val.date.timeIntervalSince1970), y: Double(val.calories))
-            entries.append(entry)
-        }
-        
-        return entries
-    }
     
-    func getDayStringFromDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM"
-        return formatter.string(from: date)
-    }
 
 }

@@ -1648,14 +1648,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-W5-BGP">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="351"/>
+                                        <rect key="frame" x="0.0" y="56" width="414" height="396"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" name="AppWhiteBg"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="JNr-W5-BGP" secondAttribute="trailing" id="15G-cw-fy9"/>
                                     <constraint firstItem="JNr-W5-BGP" firstAttribute="leading" secondItem="lOe-Wh-c7B" secondAttribute="leading" id="2Yz-vr-gGo"/>
-                                    <constraint firstItem="kco-mq-P3z" firstAttribute="top" secondItem="JNr-W5-BGP" secondAttribute="bottom" constant="45" id="42u-lJ-fhH"/>
                                     <constraint firstItem="kco-mq-P3z" firstAttribute="leading" secondItem="lOe-Wh-c7B" secondAttribute="leading" constant="106" id="4L3-Xq-fGe"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kco-mq-P3z" secondAttribute="trailing" id="8ya-Nh-hKJ"/>
                                     <constraint firstAttribute="bottom" secondItem="kco-mq-P3z" secondAttribute="bottom" constant="275" id="B7f-9B-Wmm"/>
@@ -1663,7 +1662,7 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LC7-jM-TRa" secondAttribute="trailing" constant="20" symbolic="YES" id="U1c-wz-be9"/>
                                     <constraint firstItem="LC7-jM-TRa" firstAttribute="top" secondItem="lOe-Wh-c7B" secondAttribute="top" constant="8" id="Yoz-JR-dtV"/>
                                     <constraint firstItem="LC7-jM-TRa" firstAttribute="leading" secondItem="lOe-Wh-c7B" secondAttribute="leading" constant="90" id="cK9-Ba-Efw"/>
-                                    <constraint firstItem="kco-mq-P3z" firstAttribute="top" secondItem="JNr-W5-BGP" secondAttribute="bottom" constant="45" id="nwJ-JF-hDF"/>
+                                    <constraint firstItem="kco-mq-P3z" firstAttribute="top" secondItem="JNr-W5-BGP" secondAttribute="bottom" id="nwJ-JF-hDF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1678,6 +1677,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Food Stats" id="sbi-B4-0hJ"/>
                     <connections>
+                        <outlet property="headingLabel" destination="LC7-jM-TRa" id="SfB-8x-Dr9"/>
                         <outlet property="statsViewer" destination="JNr-W5-BGP" id="6GS-Nb-ISN"/>
                     </connections>
                 </viewController>

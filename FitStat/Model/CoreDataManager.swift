@@ -57,6 +57,9 @@ struct CoreDataManager {
     mutating func fetchSleeps() -> [Sleep]? {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Sleep>(entityName: "Sleep")
+        let sectionSortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         do {
             let logs = try context.fetch(fetchRequest)
             return logs

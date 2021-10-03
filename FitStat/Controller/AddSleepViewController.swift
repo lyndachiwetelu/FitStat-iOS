@@ -30,7 +30,6 @@ class AddSleepViewController: UIViewController {
         heavySleepCheckBox.delegate = self
         sleepTimePicker.dataSource = self
         sleepTimePicker.delegate = self
-
     }
     
     @IBAction func logSleepPressed(_ sender: UIButton) {
