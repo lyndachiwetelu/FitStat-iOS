@@ -8,42 +8,19 @@
 import UIKit
 import Charts
 
-class ShowStatsViewController: UIViewController {
 
-    @IBOutlet var statsLabel: UILabel!
-    
+class ShowStatsViewController: UIViewController {    
     var statsText = ""
     
+    @IBOutlet var statsViewer: UIView!
     var manager = CoreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let dataSet = LineChartDataSet(entries: fetchFoods(), label: "Your Food Statistics");
-        dataSet.setColor(.blue)
-        dataSet.valueTextColor = .systemPink
-        let gradientColors = [UIColor.systemPink.cgColor, UIColor.clear.cgColor] as CFArray
-        let colorLocations: [CGFloat] = [0.0, 1.0]
-        guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) else {
-            return
-        }
-        dataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 80.0)
-        dataSet.drawFilledEnabled = true
-        
-        let lineChartData = LineChartData(dataSet: dataSet)
-        let chart = LineChartView()
-        chart.data = lineChartData
-        let formatter = XAxisNameFormater()
-        chart.xAxis.drawGridLinesEnabled = false
-        chart.leftAxis.drawGridLinesEnabled = false
-        chart.xAxis.valueFormatter = formatter
-        chart.xAxis.labelPosition = .bottom
-        chart.leftAxis.labelPosition = .outsideChart
-        chart.rightAxis.enabled = false
-        chart.legend.enabled = true
-        chart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
-        chart.frame = CGRect(x: 0, y: 300, width: view.frame.width, height: 300)
-        view.addSubview(chart)
-        statsLabel.text = ""
+        let chart = FLineChartView()
+        chart.lineChartDataSet = dataSet
+        statsViewer.addSubview(chart)
     }
     
     func fetchFoods() -> [ChartDataEntry] {
@@ -73,18 +50,6 @@ class ShowStatsViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM"
         return formatter.string(from: date)
-    }
-    
-    final class XAxisNameFormater: NSObject, IAxisValueFormatter {
-        func stringForValue( _ value: Double, axis _: AxisBase?) -> String {
-            // value is a timestamp
-
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd.MM"
-
-            return formatter.string(from: Date(timeIntervalSince1970: value))
-        }
-
     }
 
 }

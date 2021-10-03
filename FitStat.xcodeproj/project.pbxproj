@@ -11,8 +11,12 @@
 		786BE22A26D92D8C00A6070A /* StatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */; };
 		786BE22B26D92D8C00A6070A /* StatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */; };
 		786BE22D26D9379300A6070A /* ShowStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22C26D9379300A6070A /* ShowStatsViewController.swift */; };
+		78872F0A270A0D45007BE672 /* FLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78872F09270A0D45007BE672 /* FLineChartView.swift */; };
 		7894EAC6270836E400ADEF47 /* CheckUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */; };
 		7894EAEC27086A7100ADEF47 /* FitStat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7894EAEA27086A7100ADEF47 /* FitStat.xcdatamodeld */; };
+		78986B9C270A431000377696 /* FLineChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78986B9B270A431000377696 /* FLineChartView.xib */; };
+		78AADAA1270A1576004DAE79 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AADAA0270A1576004DAE79 /* CheckBoxView.swift */; };
+		78AADAA3270A21D9004DAE79 /* XAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AADAA2270A21D9004DAE79 /* XAxisFormatter.swift */; };
 		78B0529927079EDD00F95D7C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */; };
 		78B0529C2707A6A000F95D7C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529B2707A6A000F95D7C /* App.swift */; };
 		78B0529F2707ADAE00F95D7C /* UsesUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */; };
@@ -33,7 +37,6 @@
 		78DB1FF826D79A3C001B0A5A /* AddBodyMetricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FF726D79A3C001B0A5A /* AddBodyMetricViewController.swift */; };
 		78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB1FF926D79A50001B0A5A /* AddMoodViewController.swift */; };
 		78F0F2D426D7BAC60023B6B3 /* CheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F0F2D326D7BAC60023B6B3 /* CheckBoxView.xib */; };
-		78F0F2D626D7BAE50023B6B3 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F0F2D526D7BAE50023B6B3 /* CheckBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +44,12 @@
 		786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListTableViewCell.swift; sourceTree = "<group>"; };
 		786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatListTableViewCell.xib; sourceTree = "<group>"; };
 		786BE22C26D9379300A6070A /* ShowStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStatsViewController.swift; sourceTree = "<group>"; };
+		78872F09270A0D45007BE672 /* FLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLineChartView.swift; sourceTree = "<group>"; };
 		7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserViewController.swift; sourceTree = "<group>"; };
 		7894EAEB27086A7100ADEF47 /* FitStat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitStat.xcdatamodel; sourceTree = "<group>"; };
+		78986B9B270A431000377696 /* FLineChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLineChartView.xib; sourceTree = "<group>"; };
+		78AADAA0270A1576004DAE79 /* CheckBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		78AADAA2270A21D9004DAE79 /* XAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisFormatter.swift; sourceTree = "<group>"; };
 		78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		78B0529B2707A6A000F95D7C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsesUserDefault.swift; sourceTree = "<group>"; };
@@ -65,7 +72,6 @@
 		78DB1FF726D79A3C001B0A5A /* AddBodyMetricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBodyMetricViewController.swift; sourceTree = "<group>"; };
 		78DB1FF926D79A50001B0A5A /* AddMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoodViewController.swift; sourceTree = "<group>"; };
 		78F0F2D326D7BAC60023B6B3 /* CheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxView.xib; sourceTree = "<group>"; };
-		78F0F2D526D7BAE50023B6B3 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		E8C1D0C0410D5F5C6C68EBD1 /* Pods-FitStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitStat.debug.xcconfig"; path = "Target Support Files/Pods-FitStat/Pods-FitStat.debug.xcconfig"; sourceTree = "<group>"; };
 		F65B30C1AF665E867D4741DF /* Pods_FitStat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitStat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,6 +95,17 @@
 				6C045D5143B90B9E46895CF3 /* Pods-FitStat.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		78872F0B270A0D4D007BE672 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				78AADAA0270A1576004DAE79 /* CheckBoxView.swift */,
+				786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */,
+				78872F09270A0D45007BE672 /* FLineChartView.swift */,
+				78AADAA2270A21D9004DAE79 /* XAxisFormatter.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		78B0529A2707A68E00F95D7C /* Model */ = {
@@ -130,6 +147,7 @@
 		78BA0CD426D671FD00093DD8 /* FitStat */ = {
 			isa = PBXGroup;
 			children = (
+				78872F0B270A0D4D007BE672 /* Custom */,
 				78B0529D2707AD9500F95D7C /* Service */,
 				78B0529A2707A68E00F95D7C /* Model */,
 				78BA0CD526D671FD00093DD8 /* AppDelegate.swift */,
@@ -139,8 +157,6 @@
 				78BA0CDE26D6720000093DD8 /* Assets.xcassets */,
 				78BA0CE326D6720000093DD8 /* Info.plist */,
 				78DB1FE926D72915001B0A5A /* Colors.xcassets */,
-				78F0F2D526D7BAE50023B6B3 /* CheckBoxView.swift */,
-				786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */,
 			);
 			path = FitStat;
 			sourceTree = "<group>";
@@ -152,6 +168,7 @@
 				78F0F2D326D7BAC60023B6B3 /* CheckBoxView.xib */,
 				78BA0CE026D6720000093DD8 /* LaunchScreen.storyboard */,
 				78BA0CDB26D671FD00093DD8 /* Main.storyboard */,
+				78986B9B270A431000377696 /* FLineChartView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +264,7 @@
 				78BA0CDF26D6720000093DD8 /* Assets.xcassets in Resources */,
 				786BE22B26D92D8C00A6070A /* StatListTableViewCell.xib in Resources */,
 				78F0F2D426D7BAC60023B6B3 /* CheckBoxView.xib in Resources */,
+				78986B9C270A431000377696 /* FLineChartView.xib in Resources */,
 				78BA0CDD26D671FD00093DD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,16 +325,18 @@
 				78DB1FF226D7956F001B0A5A /* AddSleepViewController.swift in Sources */,
 				78BA0CD626D671FD00093DD8 /* AppDelegate.swift in Sources */,
 				78B0529C2707A6A000F95D7C /* App.swift in Sources */,
+				78AADAA1270A1576004DAE79 /* CheckBoxView.swift in Sources */,
 				78B0529927079EDD00F95D7C /* UserDetailsViewController.swift in Sources */,
 				78DB1FEE26D79255001B0A5A /* StatListViewController.swift in Sources */,
 				78DB1FF426D79617001B0A5A /* AddWorkoutViewController.swift in Sources */,
 				78DB1FF626D79A0B001B0A5A /* AddWeightViewController.swift in Sources */,
 				786BE22A26D92D8C00A6070A /* StatListTableViewCell.swift in Sources */,
 				78B0529F2707ADAE00F95D7C /* UsesUserDefault.swift in Sources */,
-				78F0F2D626D7BAE50023B6B3 /* CheckBoxView.swift in Sources */,
+				78AADAA3270A21D9004DAE79 /* XAxisFormatter.swift in Sources */,
 				78BA0CD826D671FD00093DD8 /* SceneDelegate.swift in Sources */,
 				7894EAC6270836E400ADEF47 /* CheckUserViewController.swift in Sources */,
 				78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */,
+				78872F0A270A0D45007BE672 /* FLineChartView.swift in Sources */,
 				78DB1FF026D7954A001B0A5A /* AddFoodViewController.swift in Sources */,
 				78CD23DA270884CB00166490 /* CoreDataManager.swift in Sources */,
 				78DB1FEC26D7923D001B0A5A /* SettingsViewController.swift in Sources */,
