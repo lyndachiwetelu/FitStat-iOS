@@ -14,8 +14,8 @@ class AddWeightViewController: UIViewController {
     @IBOutlet var weightTextField: UITextField!
     
     var weightUnits = [
-        "Kilograms",
-        "Pounds"
+        WeightUnits.kg,
+        WeightUnits.lbs
     ]
     
     var selectedUnit = "Kilograms"

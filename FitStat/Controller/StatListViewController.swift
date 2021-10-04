@@ -9,7 +9,7 @@ import UIKit
 import Charts
 
 
-class StatListViewController: UIViewController {
+class StatListViewController: UIViewController, SetUpChartData {
     var manager = CoreDataManager()
 
     @IBOutlet var tableView: UITableView!
@@ -19,12 +19,12 @@ class StatListViewController: UIViewController {
     }
     
     let categories =  [
-        ["Food Stats", #imageLiteral(resourceName: "chart1"), ],
-        ["Sleep Stats", #imageLiteral(resourceName: "chart2"),],
-        ["Weight Stats", #imageLiteral(resourceName: "chart1"),],
-        ["Workout Stats", #imageLiteral(resourceName: "chart2"), ],
-        ["Mood Stats", #imageLiteral(resourceName: "chart1"),],
-        ["Body Metrics Stats",#imageLiteral(resourceName: "chart2"),],
+        [Stats.food, #imageLiteral(resourceName: "chart1"), ],
+        [Stats.sleep, #imageLiteral(resourceName: "chart2"),],
+        [Stats.weight, #imageLiteral(resourceName: "chart1"),],
+        [Stats.workout, #imageLiteral(resourceName: "chart2"), ],
+        [Stats.mood, #imageLiteral(resourceName: "chart1"),],
+        [Stats.metric, #imageLiteral(resourceName: "chart2"),],
     ]
     
     var selectedText = ""
@@ -56,17 +56,33 @@ extension StatListViewController: UITableViewDelegate {
             destination.navigationItem.title = selectedText
             destination.statsText = selectedText
             destination.lineChartDataSets = getLineChartDataSetsForSelected()
-            
+            setDestinationAxisTexts(destination: destination)
         }
        
     }
     
+    func setDestinationAxisTexts(destination: ShowStatsViewController) {
+        destination.xText = "Days Logged"
+        switch selectedText {
+        case Stats.food:
+            destination.yText = "Calories"
+        case Stats.sleep:
+            destination.yText = "Hours Slept"
+        case Stats.mood:
+            destination.yText = "Mood"
+            
+        default:
+            destination.yText = ""
+            destination.xText = ""
+        }
+    }
+    
     func getLineChartDataSetsForSelected() -> [LineChartDataSet] {
         switch selectedText {
-        case "Food Stats":
-            return [getLineChartDataSet(entries: fetchFoodsChartData(), label: "Food")!]
-        case "Sleep Stats":
-            let sleepSets = fetchSleepsChartData()
+        case Stats.food:
+            return [getLineChartDataSet(entries: fetchFoodsChartData(manager.fetchFoods()), label: "Food")!]
+        case Stats.sleep:
+            let sleepSets = fetchSleepsChartData(manager.fetchSleeps())
             var result = [LineChartDataSet]()
             let labels = ["Light Sleep", "Heavy Sleep"]
             let colors = [UIColor.systemOrange, UIColor.systemPurple]
@@ -75,8 +91,12 @@ extension StatListViewController: UITableViewDelegate {
                 result.append(ds)
             }
             return result
+        case Stats.mood:
+            return [getLineChartDataSet(entries: fetchMoodsChartData(manager.fetchMoods()), label: "Mood", color: UIColor.magenta, textColor: UIColor.white, gradientColor: UIColor.magenta.cgColor)!]
+        case Stats.weight:
+            return [getLineChartDataSet(entries: fetchWeightsChartData(manager.fetchWeights()), label: "Weight", color: .systemBlue, textColor: UIColor.white, gradientColor: UIColor.blue.cgColor)!]
         default:
-            return [getLineChartDataSet(entries: fetchFoodsChartData(), label: "Food")!]
+            return [LineChartDataSet]()
         }
     }
     
@@ -111,80 +131,3 @@ extension StatListViewController: UITableViewDataSource {
 }
 
 
-
-
-//MARK: - CoreDataManager Stuff
-extension StatListViewController {
-    func fetchFoodsChartData() -> [ChartDataEntry] {
-        let foods = manager.fetchFoods()
-        var groupByDay = [FoodChartEntry]()
-        var entries = [ChartDataEntry]()
-        
-        for f in foods! {
-            let day = getDayStringFromDate(date: f.time!)
-            if var dayVal = groupByDay.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                dayVal.calories += Int(f.calories)
-            } else {
-                let foodChartEntry = FoodChartEntry(date: f.time!, calories: Int(f.calories))
-                groupByDay.append(foodChartEntry)
-            }
-        }
-        
-        for val in groupByDay {
-            let entry = ChartDataEntry(x: Double(val.date.timeIntervalSince1970), y: Double(val.calories))
-            entries.append(entry)
-        }
-        
-        return entries
-    }
-    
-    func fetchSleepsChartData() -> [[ChartDataEntry]] {
-        let sleeps = manager.fetchSleeps()
-        var light = [SleepChartEntry]()
-        var heavy = [SleepChartEntry]()
-        var lightEntries = [ChartDataEntry]()
-        var heavyEntries = [ChartDataEntry]()
-        
-        for s in sleeps! {
-            let day = getDayStringFromDate(date: s.time!)
-            let duration = s.durationUnit == "Hours" ? Float(s.duration) : Float(s.duration / 60)
-            if s.light {
-                if var dayVal = light.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                    dayVal.hours += duration
-                } else {
-                    let sleepChartEntry = SleepChartEntry(date: s.time!, hours: duration)
-                    light.append(sleepChartEntry)
-                }
-                
-            } else {
-                if var dayVal = heavy.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                    dayVal.hours += duration
-                } else {
-                    let sleepChartEntry = SleepChartEntry(date: s.time!, hours: duration)
-                    heavy.append(sleepChartEntry)
-                }
-                
-            }
-            
-        }
-        
-        for val in light {
-            let entry = ChartDataEntry(x: Double(val.date.timeIntervalSince1970), y: Double(val.hours))
-            lightEntries.append(entry)
-        }
-        
-        for val in heavy {
-            let entry = ChartDataEntry(x: Double(val.date.timeIntervalSince1970), y: Double(val.hours))
-            heavyEntries.append(entry)
-        }
-        
-        return [lightEntries, heavyEntries]
-    }
-    
-    func getDayStringFromDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM"
-        return formatter.string(from: date)
-    }
-    
-}

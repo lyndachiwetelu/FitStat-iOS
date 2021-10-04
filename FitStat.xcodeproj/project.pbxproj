@@ -15,6 +15,7 @@
 		7894EAC6270836E400ADEF47 /* CheckUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */; };
 		7894EAEC27086A7100ADEF47 /* FitStat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7894EAEA27086A7100ADEF47 /* FitStat.xcdatamodeld */; };
 		78986B9C270A431000377696 /* FLineChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78986B9B270A431000377696 /* FLineChartView.xib */; };
+		78986BA0270A785A00377696 /* SetUpChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78986B9F270A785A00377696 /* SetUpChartData.swift */; };
 		78AADAA1270A1576004DAE79 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AADAA0270A1576004DAE79 /* CheckBoxView.swift */; };
 		78AADAA3270A21D9004DAE79 /* XAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AADAA2270A21D9004DAE79 /* XAxisFormatter.swift */; };
 		78B0529927079EDD00F95D7C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */; };
@@ -48,6 +49,7 @@
 		7894EAC5270836E400ADEF47 /* CheckUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserViewController.swift; sourceTree = "<group>"; };
 		7894EAEB27086A7100ADEF47 /* FitStat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitStat.xcdatamodel; sourceTree = "<group>"; };
 		78986B9B270A431000377696 /* FLineChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLineChartView.xib; sourceTree = "<group>"; };
+		78986B9F270A785A00377696 /* SetUpChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpChartData.swift; sourceTree = "<group>"; };
 		78AADAA0270A1576004DAE79 /* CheckBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		78AADAA2270A21D9004DAE79 /* XAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisFormatter.swift; sourceTree = "<group>"; };
 		78B0529827079EDD00F95D7C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */,
+				78986B9F270A785A00377696 /* SetUpChartData.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				78DB1FF226D7956F001B0A5A /* AddSleepViewController.swift in Sources */,
 				78BA0CD626D671FD00093DD8 /* AppDelegate.swift in Sources */,
 				78B0529C2707A6A000F95D7C /* App.swift in Sources */,
+				78986BA0270A785A00377696 /* SetUpChartData.swift in Sources */,
 				78AADAA1270A1576004DAE79 /* CheckBoxView.swift in Sources */,
 				78B0529927079EDD00F95D7C /* UserDetailsViewController.swift in Sources */,
 				78DB1FEE26D79255001B0A5A /* StatListViewController.swift in Sources */,

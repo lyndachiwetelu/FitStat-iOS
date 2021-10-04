@@ -47,19 +47,19 @@ class AddMoodViewController: UIViewController {
     func setSelectedMood(tag: Int) {
         switch tag {
             case 100:
-            selectedMood = "Joyful"
+            selectedMood = Moods.joyful
             case 200:
-            selectedMood = "Indifferent"
+            selectedMood = Moods.indifferent
             case 300:
-            selectedMood = "Happy"
+            selectedMood = Moods.happy
             case 400:
-            selectedMood = "Happy"
+            selectedMood = Moods.sad
             case 500:
-            selectedMood = "Content"
+            selectedMood = Moods.content
             case 600:
-            selectedMood = "Depressed"
+            selectedMood = Moods.depressed
         default:
-            selectedMood = "None"
+            selectedMood = Moods.none
         }
     }
     

@@ -15,6 +15,9 @@ class FLineChartView: UIView {
     @IBOutlet var xAxisLabel: UILabel!
     @IBOutlet var chartView: UIView!
     
+    var yAxisText: String = ""
+    var xAxisText = ""
+    
     
     var lineChartDataSets: [LineChartDataSet]? {
         didSet {
@@ -33,10 +36,10 @@ class FLineChartView: UIView {
             chart.frame = chartView.bounds
             chartView.translatesAutoresizingMaskIntoConstraints = false
             chartView.addSubview(chart)
-            yAxisLabel.frame = CGRect(x: 0.0, y: 0.0, width: 100, height: 50)
+//            yAxisLabel.frame = CGRect(x: 0.0, y: 0.0, width: 100, height: 50)
             yAxisLabel.transform =  CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-            yAxisLabel.text = "Calories"
-            xAxisLabel.text = "Days you logged"
+            yAxisLabel.text = yAxisText
+            xAxisLabel.text = xAxisText
         }
     }
     

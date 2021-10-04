@@ -9,22 +9,25 @@ import UIKit
 import Charts
 
 
-class ShowStatsViewController: UIViewController {    
+class ShowStatsViewController: UIViewController, ChartViewDelegate {
     
 
     @IBOutlet var headingLabel: UILabel!
     @IBOutlet var statsViewer: UIView!
     var statsText = ""
     var lineChartDataSets = [LineChartDataSet]()
+    var bubbleChartDataSets = [BubbleChartDataSet]()
+    var yText: String = ""
+    var xText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let chart = FLineChartView()
+        chart.yAxisText = yText
+        chart.xAxisText = xText
         chart.lineChartDataSets = lineChartDataSets
-        statsViewer.addSubview(chart)
         headingLabel.text = "Your \(statsText) at a glance"
+        statsViewer.addSubview(chart)
     }
     
-    
-
 }

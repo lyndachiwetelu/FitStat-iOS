@@ -72,6 +72,9 @@ struct CoreDataManager {
     mutating func fetchMoods() -> [Mood]? {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Mood>(entityName: "Mood")
+        let sectionSortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         do {
             let logs = try context.fetch(fetchRequest)
             return logs
@@ -84,6 +87,9 @@ struct CoreDataManager {
     mutating func fetchWeights() -> [Weight]? {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Weight>(entityName: "Weight")
+        let sectionSortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         do {
             let logs = try context.fetch(fetchRequest)
             return logs
@@ -96,6 +102,9 @@ struct CoreDataManager {
     mutating func fetchWorkouts() -> [Workout]? {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Workout>(entityName: "Workout")
+        let sectionSortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         do {
             let logs = try context.fetch(fetchRequest)
             return logs
@@ -108,6 +117,9 @@ struct CoreDataManager {
     mutating func fetchMetrics() -> [Metric]? {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Metric>(entityName: "Metric")
+        let sectionSortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         do {
             let logs = try context.fetch(fetchRequest)
             return logs
