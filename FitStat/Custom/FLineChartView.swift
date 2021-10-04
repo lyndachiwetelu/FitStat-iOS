@@ -32,12 +32,12 @@ class FLineChartView: UIView {
             chart.leftAxis.labelPosition = .outsideChart
             chart.rightAxis.enabled = false
             chart.legend.enabled = true
-            chart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
+            chart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .easeInSine)
             chart.frame = chartView.bounds
             chartView.translatesAutoresizingMaskIntoConstraints = false
             chartView.addSubview(chart)
-//            yAxisLabel.frame = CGRect(x: 0.0, y: 0.0, width: 100, height: 50)
             yAxisLabel.transform =  CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+             
             yAxisLabel.text = yAxisText
             xAxisLabel.text = xAxisText
         }

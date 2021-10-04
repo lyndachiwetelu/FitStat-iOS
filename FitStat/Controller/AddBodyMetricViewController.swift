@@ -15,25 +15,25 @@ class AddBodyMetricViewController: UIViewController {
     
     @IBOutlet var valueTextField: UITextField!
     var units = [
-        "metres",
-        "centimeters",
-        "inches",
+        MetricUnits.centimeters,
+        MetricUnits.metres,
+        MetricUnits.inches
     ]
     
-    var selectedUnit = "centimeters"
+    var selectedUnit = MetricUnits.centimeters
     
     var parts = [
-        "Chest",
-        "Bust",
-        "Left Arm",
-        "Right Arm",
-        "Left thigh",
-        "Right Thigh",
-        "Waist",
-        "Belly"
+        Metrics.chest,
+        Metrics.bust,
+        Metrics.leftArm,
+        Metrics.rightArm,
+        Metrics.leftThigh,
+        Metrics.rightThigh,
+        Metrics.waist,
+        Metrics.belly
     ]
     
-    var selectedPart = "Chest"
+    var selectedPart = Metrics.chest
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,6 +9,7 @@ import UIKit
 
 class StatListTableViewCell: UITableViewCell {
 
+    @IBOutlet var statsChartView: FLineChartView!
     @IBOutlet var statChartImage: UIImageView!
     @IBOutlet var statLabel: UILabel!
     override func awakeFromNib() {

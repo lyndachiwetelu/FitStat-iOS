@@ -30,6 +30,23 @@ struct WeightUnits {
     static let lbs = "Pounds"
 }
 
+struct Metrics {
+    static let chest = "Chest"
+    static let bust = "Bust"
+    static let leftArm = "Left Arm"
+    static let rightArm = "Right Arm"
+    static let leftThigh = "Left thigh"
+    static let rightThigh = "Right Thigh"
+    static let waist = "Waist"
+    static let belly = "Belly"
+}
+
+struct MetricUnits {
+    static let metres = "metres"
+    static let centimeters = "centimeters"
+    static let inches = "inches"
+}
+
 // stats
 struct Stats {
     static let food = "Food Stats"
@@ -69,9 +86,15 @@ struct Moods {
     }
 }
 
-struct FoodChartEntry {
+struct CaloriesChartEntry {
     var date: Date
     var calories: Int
+}
+
+struct WorkoutChartEntry {
+    var date: Date
+    var calories: Int
+    var duration: Float
 }
 
 struct SleepChartEntry {
@@ -82,4 +105,10 @@ struct SleepChartEntry {
 struct MoodChartEntry {
     var date: Date
     var moodValue: Float
+}
+
+struct MetricChartEntry {
+    var date: Date
+    var centimeters: Float
+    var part: String
 }
