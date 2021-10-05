@@ -56,8 +56,8 @@ extension GetStatsSummary {
         let percentage = Int(round((Float(diff) / Float(avgCal)) * 100.0))
         let upOrDown =  up ? "up" : "down"
         
-        var iconSlash = UIImage(systemName: "heart.slash.fill")!
-        var icon = UIImage(systemName: "heart.fill")!
+        let iconSlash = UIImage(systemName: "heart.slash.fill")!
+        let icon = UIImage(systemName: "heart.fill")!
         
         let caloriesOkay = percentage < 100 && latestDay!.calories <= idealCalorieCount
         let latestCaloriesOkay = latestDay!.calories <= idealCalorieCount
@@ -118,8 +118,8 @@ extension GetStatsSummary {
         let percentage = Int(round((Float(diff) / Float(avgTime)) * 100.0))
         let upOrDown =  up ? "up" : "down"
         
-        var iconSlash = UIImage(systemName: "heart.slash.fill")!
-        var icon = UIImage(systemName: "heart.fill")!
+        let iconSlash = UIImage(systemName: "heart.slash.fill")!
+        let icon = UIImage(systemName: "heart.fill")!
         
         let sleepOkay = percentage > 0 && up && latestDay!.duration >= idealSleepTime
         let latestSleepOkay = latestDay!.duration >= idealSleepTime
@@ -179,7 +179,7 @@ extension GetStatsSummary {
         let percentage = Int(round((Float(diff) / Float(avgWeight)) * 100.0))
         let upOrDown =  up ? "up" : "down"
         
-        var iconSlash = UIImage(systemName: "heart.slash.fill")!
+        let iconSlash = UIImage(systemName: "heart.slash.fill")!
         var icon = UIImage(systemName: "heart.fill")!
         
         let weightOkay = (up == false) && percentage > 0
@@ -241,8 +241,8 @@ extension GetStatsSummary {
         let percentage = Int(round((Float(diff) / avgMood * 100.0)))
         let upOrDown =  up ? "up" : "down"
         
-        var iconSlash = UIImage(systemName: "heart.slash.fill")!
-        var icon = UIImage(systemName: "heart.fill")!
+        let iconSlash = UIImage(systemName: "heart.slash.fill")!
+        let icon = UIImage(systemName: "heart.fill")!
         
         let moodOkay = percentage >= 0 && up
         let latestMoodOkay = Int(latestDay!.moodValue) >= idealMood
