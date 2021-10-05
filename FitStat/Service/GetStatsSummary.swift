@@ -180,7 +180,7 @@ extension GetStatsSummary {
         let upOrDown =  up ? "up" : "down"
         
         let iconSlash = UIImage(systemName: "heart.slash.fill")!
-        var icon = UIImage(systemName: "heart.fill")!
+        let icon = UIImage(systemName: "heart.fill")!
         
         let weightOkay = (up == false) && percentage > 0
         let latestWeightOkay = latestDay!.weight <= idealWeight
