@@ -157,7 +157,10 @@ extension StatListViewController: UITableViewDelegate {
         } else  {
             lineChartDataSet.fill = Fill.fillWithCGColor(color.cgColor)
         }
-
+        if fill == false {
+            lineChartDataSet.lineWidth = 5.5
+        }
+        
         lineChartDataSet.drawFilledEnabled = fill
         return lineChartDataSet
     }
