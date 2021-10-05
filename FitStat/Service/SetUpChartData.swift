@@ -138,14 +138,13 @@ extension SetUpChartData {
     }
     
     func fetchFoodsChartData(_ foods: [Food]? = [Food]() ) -> [ChartDataEntry] {
-        
         var groupByDay = [CaloriesChartEntry]()
         var entries = [ChartDataEntry]()
         
         for f in foods! {
             let day = getDayStringFromDate(date: f.time!)
-            if var dayVal = groupByDay.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                dayVal.calories += Int(f.calories)
+            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
+                groupByDay[dayVal].calories += Int(f.calories)
             } else {
                 let foodChartEntry = CaloriesChartEntry(date: f.time!, calories: Int(f.calories))
                 groupByDay.append(foodChartEntry)
@@ -156,8 +155,6 @@ extension SetUpChartData {
             let entry = ChartDataEntry(x: Double(val.date.timeIntervalSince1970), y: Double(val.calories))
             entries.append(entry)
         }
-        
-        print(groupByDay)
         
         return entries
     }
