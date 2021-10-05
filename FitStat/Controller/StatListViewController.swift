@@ -67,9 +67,14 @@ extension StatListViewController: UITableViewDelegate {
         switch selectedText {
         case Stats.food:
             destination.summary = getFoodSummaries(manager.fetchFoods())
+        case Stats.sleep:
+            destination.summary = getSleepSummaries(manager.fetchSleeps())
+        case Stats.mood:
+            destination.summary = getMoodSummaries(manager.fetchMoods())
+        case Stats.weight:
+            destination.summary = getWeightSummaries(manager.fetchWeights())
         default:
             destination.summary = nil
-           
         }
     }
     

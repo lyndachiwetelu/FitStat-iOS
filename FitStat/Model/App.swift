@@ -99,6 +99,25 @@ struct Moods {
             return 3
         }
     }
+    
+    static func getMoodForValue(_ value: Int) -> String {
+        switch value {
+        case 5:
+            return joyful
+        case 4:
+            return happy
+        case 3:
+            return content
+        case 2:
+            return indifferent
+        case 1:
+            return sad
+        case 0:
+            return depressed
+        default:
+            return content
+        }
+    }
 }
 
 struct CaloriesChartEntry {
