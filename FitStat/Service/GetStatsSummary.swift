@@ -138,33 +138,33 @@ extension GetStatsSummary {
     }
     
     func getWeightSummaries(_ weights: [Weight]? ) -> Summary? {
-        var groupByDay = [Weight]()
-        
         if weights == nil {
             return nil
         }
         
-        for w in weights! {
-            let day = getDayStringFromDate(date: w.time!)
-            let kg = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
-            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.time!) == day}) {
-                groupByDay[dayVal].weight += kg
-            } else {
-                w.weight = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
-                w.unit = WeightUnits.kg
-                groupByDay.append(w)
-            }
-        }
+//        for w in weights! {
+//            let day = getDayStringFromDate(date: w.time!)
+//            let kg = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
+//            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.time!) == day}) {
+//                groupByDay[dayVal].weight += kg
+//            } else {
+//                w.weight = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
+//                w.unit = WeightUnits.kg
+//                groupByDay.append(w)
+//            }
+//        }
         
         // do calculations
-        let latestDay = groupByDay.last
+        let latestDay = weights!.last
         
-        let restOfDays = groupByDay.dropLast()
+        let restOfDays = weights!.dropLast()
         
         var totalWeight: Float = 0.0
         for r in restOfDays {
-            totalWeight += r.weight
+            let kg = r.unit == WeightUnits.kg ? Float(r.weight) : Float(r.weight / 2.2)
+            totalWeight += kg
         }
+        
         let avgWeight = totalWeight / Float(restOfDays.count)
         var up = true
         var diff: Int32 = Int32(avgWeight) - Int32(latestDay!.weight)
@@ -195,7 +195,7 @@ extension GetStatsSummary {
         let latest = KeyValue(key: "Weight (kg)", value: "\(round(weight))", color: getColor(latestWeightOkay), icon: latestIcon)
         
         let average = KeyValue(key: "Average weight", value: "\(round(avgWeight))", color: getColor(avgWeightOkay), icon: avgIcon)
-        let days = KeyValue(key: "Days Logged", value: "\(groupByDay.count)", color: UIColor(named: "AppDarkPinkPrio")!)
+        let days = KeyValue(key: "Days Logged", value: "\(weights!.count)", color: UIColor(named: "AppDarkPinkPrio")!)
     
         return Summary(status: status, latest: latest, average: average, days: days)
     }
