@@ -101,7 +101,6 @@ extension StatListViewController: UITableViewDelegate {
         
         switch text {
         case Stats.food:
-            print(fetchFoodsChartData(manager.fetchFoods()))
             return [getLineChartDataSet(entries: fetchFoodsChartData(manager.fetchFoods()), label: "Food")!]
         case Stats.sleep:
             let sleepSets = fetchSleepsChartData(manager.fetchSleeps())
@@ -135,7 +134,7 @@ extension StatListViewController: UITableViewDelegate {
                           UIColor.systemPink, UIColor.brown, UIColor.green, UIColor.yellow]
             
             for (index, s) in sets.enumerated() {
-                let ds = getLineChartDataSet(entries: s, label: labels[index], color: colors[index], textColor: .systemYellow, gradientColor: colors[index].cgColor, fillGradient: false)!
+                let ds = getLineChartDataSet(entries: s, label: labels[index], color: colors[index], textColor: .systemYellow, gradientColor: colors[index].cgColor, fillGradient: false, fill: false)!
                 result.append(ds)
             }
             return result
@@ -144,7 +143,7 @@ extension StatListViewController: UITableViewDelegate {
         }
     }
     
-    func getLineChartDataSet(entries: [ChartDataEntry], label: String, color: UIColor = .blue, textColor: UIColor = .systemPink, gradientColor: CGColor = UIColor.systemPink.cgColor, fillGradient : Bool = true) -> LineChartDataSet? {
+    func getLineChartDataSet(entries: [ChartDataEntry], label: String, color: UIColor = .blue, textColor: UIColor = .systemPink, gradientColor: CGColor = UIColor.systemPink.cgColor, fillGradient : Bool = true, fill : Bool = true) -> LineChartDataSet? {
         let lineChartDataSet = LineChartDataSet(entries: entries, label: label);
         lineChartDataSet.setColor(color)
         lineChartDataSet.valueTextColor = textColor
@@ -158,8 +157,8 @@ extension StatListViewController: UITableViewDelegate {
         } else  {
             lineChartDataSet.fill = Fill.fillWithCGColor(color.cgColor)
         }
-       
-        lineChartDataSet.drawFilledEnabled = true
+
+        lineChartDataSet.drawFilledEnabled = fill
         return lineChartDataSet
     }
 }

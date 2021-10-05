@@ -85,8 +85,8 @@ extension SetUpChartData {
         
         for w in workouts! {
             let day = getDayStringFromDate(date: w.time!)
-            if var dayVal = groupByDay.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                dayVal.calories += Int(w.calories)
+            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
+                groupByDay[dayVal].calories += Int(w.calories)
             } else {
                 let chartEntry = WorkoutChartEntry(date: w.time!, calories: Int(w.calories), duration: Float(w.duration))
                 groupByDay.append(chartEntry)
@@ -121,8 +121,8 @@ extension SetUpChartData {
         
         for m in moods! {
             let day = getDayStringFromDate(date: m.time!)
-            if var dayVal = groupByDay.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                dayVal.moodValue += Float(Moods.getMoodValue(m.mood!))
+            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
+                groupByDay[dayVal].moodValue += Float(Moods.getMoodValue(m.mood!))
             } else {
                 let moodChartEntry = MoodChartEntry(date: m.time!, moodValue: Float(Moods.getMoodValue(m.mood!)))
                 groupByDay.append(moodChartEntry)
@@ -169,16 +169,16 @@ extension SetUpChartData {
             let day = getDayStringFromDate(date: s.time!)
             let duration = s.durationUnit == "Hours" ? Float(s.duration) : Float(s.duration / 60)
             if s.light {
-                if var dayVal = light.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                    dayVal.hours += duration
+                if let dayVal = light.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
+                    light[dayVal].hours += duration
                 } else {
                     let sleepChartEntry = SleepChartEntry(date: s.time!, hours: duration)
                     light.append(sleepChartEntry)
                 }
                 
             } else {
-                if var dayVal = heavy.first(where: {getDayStringFromDate(date: $0.date) == day}) {
-                    dayVal.hours += duration
+                if let dayVal = heavy.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
+                    heavy[dayVal].hours += duration
                 } else {
                     let sleepChartEntry = SleepChartEntry(date: s.time!, hours: duration)
                     heavy.append(sleepChartEntry)
