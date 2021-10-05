@@ -232,7 +232,7 @@ extension GetStatsSummary {
         let latest = KeyValue(key: "Mood", value: "\(latestDay!.mood!)", color: getColor(latestMoodOkay), icon: latestIcon)
         
         let average = KeyValue(key: "Average Mood", value: "\(Moods.getMoodForValue(Int(avgMood)))", color: getColor(avgMoodOkay), icon: avgIcon)
-        let days = KeyValue(key: "Days Logged", value: "\(groupByDay.count)", color: UIColor(named: "AppDarkPinkPrio")!)
+        let days = KeyValue(key: "Times Logged", value: "\(moods!.count)", color: UIColor(named: "AppDarkPinkPrio")!)
     
         return Summary(status: status, latest: latest, average: average, days: days)
     }
