@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct AppConstant {
     
@@ -23,6 +24,20 @@ struct AppConstant {
     //MARK: - Data Keys
     static let userDetailsKey = "userDetails"
     
+}
+
+struct KeyValue {
+    let key: String
+    let value: String
+    let color: UIColor
+    var icon: UIImage? = nil
+}
+
+struct Summary {
+    let status: KeyValue
+    let latest: KeyValue
+    let average: KeyValue
+    let days : KeyValue
 }
 
 struct WeightUnits {

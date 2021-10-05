@@ -22,9 +22,17 @@ class ShowStatsViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var daysLabel: UILabel!
     @IBOutlet var daysValueLabel: UILabel!
     
-    
     @IBOutlet var headingLabel: UILabel!
     @IBOutlet var statsViewer: UIView!
+    
+    @IBOutlet var statusIcon: UIImageView!
+    @IBOutlet var latestIcon: UIImageView!
+    @IBOutlet var averageIcon: UIImageView!
+    
+    
+    
+    
+    var summary : Summary?
     var statsText = ""
     var lineChartDataSets = [LineChartDataSet]()
     var bubbleChartDataSets = [BubbleChartDataSet]()
@@ -39,6 +47,23 @@ class ShowStatsViewController: UIViewController, ChartViewDelegate {
         chart.lineChartDataSets = lineChartDataSets
         headingLabel.text = "Your \(statsText) at a glance"
         statsViewer.addSubview(chart)
+        
+        statusLabel.text = summary?.status.key
+        statusValueLabel.text = summary?.status.value
+        statusIcon.image = summary?.status.icon
+        statusIcon.tintColor = summary?.status.color
+        
+        latestLabel.text = summary?.latest.key
+        latestValueLabel.text = summary?.latest.value
+        latestIcon.image = summary?.latest.icon
+        latestIcon.tintColor = summary?.latest.color
+        
+        averageLabel.text = summary?.average.key
+        averageValueLabel.text = summary?.average.value
+        averageIcon.image = summary?.average.icon
+        averageIcon.tintColor = summary?.average.color
+        
+        daysLabel.text = summary?.days.key
+        daysValueLabel.text = summary?.days.value
     }
-    
 }

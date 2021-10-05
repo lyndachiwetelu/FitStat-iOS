@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30198A3DE85528C0063DC26E /* Pods_FitStat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65B30C1AF665E867D4741DF /* Pods_FitStat.framework */; };
+		782EE9EF270CBAE3000054AD /* GetStatsSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782EE9EE270CBAE3000054AD /* GetStatsSummary.swift */; };
 		786BE22A26D92D8C00A6070A /* StatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */; };
 		786BE22B26D92D8C00A6070A /* StatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */; };
 		786BE22D26D9379300A6070A /* ShowStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BE22C26D9379300A6070A /* ShowStatsViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		6C045D5143B90B9E46895CF3 /* Pods-FitStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitStat.release.xcconfig"; path = "Target Support Files/Pods-FitStat/Pods-FitStat.release.xcconfig"; sourceTree = "<group>"; };
+		782EE9EE270CBAE3000054AD /* GetStatsSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatsSummary.swift; sourceTree = "<group>"; };
 		786BE22826D92D8C00A6070A /* StatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListTableViewCell.swift; sourceTree = "<group>"; };
 		786BE22926D92D8C00A6070A /* StatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatListTableViewCell.xib; sourceTree = "<group>"; };
 		786BE22C26D9379300A6070A /* ShowStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStatsViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				78B0529E2707ADAE00F95D7C /* UsesUserDefault.swift */,
 				78986B9F270A785A00377696 /* SetUpChartData.swift */,
+				782EE9EE270CBAE3000054AD /* GetStatsSummary.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				78DB1FFA26D79A50001B0A5A /* AddMoodViewController.swift in Sources */,
 				78872F0A270A0D45007BE672 /* FLineChartView.swift in Sources */,
 				78DB1FF026D7954A001B0A5A /* AddFoodViewController.swift in Sources */,
+				782EE9EF270CBAE3000054AD /* GetStatsSummary.swift in Sources */,
 				78CD23DA270884CB00166490 /* CoreDataManager.swift in Sources */,
 				78DB1FEC26D7923D001B0A5A /* SettingsViewController.swift in Sources */,
 			);

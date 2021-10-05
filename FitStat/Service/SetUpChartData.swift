@@ -138,6 +138,7 @@ extension SetUpChartData {
     }
     
     func fetchFoodsChartData(_ foods: [Food]? = [Food]() ) -> [ChartDataEntry] {
+        
         var groupByDay = [CaloriesChartEntry]()
         var entries = [ChartDataEntry]()
         
@@ -155,6 +156,8 @@ extension SetUpChartData {
             let entry = ChartDataEntry(x: Double(val.date.timeIntervalSince1970), y: Double(val.calories))
             entries.append(entry)
         }
+        
+        print(groupByDay)
         
         return entries
     }

@@ -9,7 +9,7 @@ import UIKit
 import Charts
 
 
-class StatListViewController: UIViewController, SetUpChartData {
+class StatListViewController: UIViewController, SetUpChartData, GetStatsSummary {
     var manager = CoreDataManager()
 
     @IBOutlet var tableView: UITableView!
@@ -57,8 +57,20 @@ extension StatListViewController: UITableViewDelegate {
             destination.statsText = selectedText
             destination.lineChartDataSets = getLineChartDataSetsForSelected()
             setDestinationAxisTexts(destination: destination)
+            setDestinationSummaries(destination: destination)
+            
         }
        
+    }
+    
+    func setDestinationSummaries(destination: ShowStatsViewController) {
+        switch selectedText {
+        case Stats.food:
+            destination.summary = getFoodSummaries(manager.fetchFoods())
+        default:
+            destination.summary = nil
+           
+        }
     }
     
     func setDestinationAxisTexts(destination: ShowStatsViewController) {
@@ -89,6 +101,7 @@ extension StatListViewController: UITableViewDelegate {
         
         switch text {
         case Stats.food:
+            print(fetchFoodsChartData(manager.fetchFoods()))
             return [getLineChartDataSet(entries: fetchFoodsChartData(manager.fetchFoods()), label: "Food")!]
         case Stats.sleep:
             let sleepSets = fetchSleepsChartData(manager.fetchSleeps())
