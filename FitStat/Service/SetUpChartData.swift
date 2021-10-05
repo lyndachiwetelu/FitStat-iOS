@@ -119,18 +119,8 @@ extension SetUpChartData {
         var groupByDay = [MoodChartEntry]()
         var entries = [ChartDataEntry]()
         
-        for m in moods! {
-            let day = getDayStringFromDate(date: m.time!)
-            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
-                groupByDay[dayVal].moodValue += Float(Moods.getMoodValue(m.mood!))
-            } else {
-                let moodChartEntry = MoodChartEntry(date: m.time!, moodValue: Float(Moods.getMoodValue(m.mood!)))
-                groupByDay.append(moodChartEntry)
-            }
-        }
-        
-        for val in groupByDay {
-            let entry = ChartDataEntry(x: Double(val.date.timeIntervalSince1970), y: Double(val.moodValue))
+        for val in moods! {
+            let entry = ChartDataEntry(x: Double(val.time!.timeIntervalSince1970), y: Double(Moods.getMoodValue(val.mood!)))
             entries.append(entry)
         }
         
