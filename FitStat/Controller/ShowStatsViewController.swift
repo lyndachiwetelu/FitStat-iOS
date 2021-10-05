@@ -11,7 +11,18 @@ import Charts
 
 class ShowStatsViewController: UIViewController, ChartViewDelegate {
     
-
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var statusValueLabel: UILabel!
+    @IBOutlet var latestLabel: UILabel!
+    @IBOutlet var latestValueLabel: UILabel!
+    
+    @IBOutlet var averageLabel: UILabel!
+    @IBOutlet var averageValueLabel: UILabel!
+    
+    @IBOutlet var daysLabel: UILabel!
+    @IBOutlet var daysValueLabel: UILabel!
+    
+    
     @IBOutlet var headingLabel: UILabel!
     @IBOutlet var statsViewer: UIView!
     var statsText = ""

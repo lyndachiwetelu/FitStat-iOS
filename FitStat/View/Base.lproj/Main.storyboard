@@ -1633,10 +1633,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOe-Wh-c7B">
-                                <rect key="frame" x="0.0" y="56" width="414" height="757"/>
+                                <rect key="frame" x="0.0" y="56" width="444" height="757"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Workout Stats at a glance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LC7-jM-TRa">
-                                        <rect key="frame" x="89.999999999999986" y="8" width="233.66666666666663" height="21"/>
+                                        <rect key="frame" x="89.999999999999986" y="7.9999999999999982" width="233.66666666666663" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="AppDarkPink"/>
                                         <nil key="highlightedColor"/>
@@ -1648,20 +1648,105 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-W5-BGP">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="396"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="444" height="396.66666666666663"/>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qxe-Mi-hU1">
+                                        <rect key="frame" x="0.0" y="490" width="444" height="267"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JqP-bh-h8h">
+                                                <rect key="frame" x="30" y="7.9999999999999964" width="384" height="62.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka1-hc-hKf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="62.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPinkPriority"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Values" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liy-tO-FNb">
+                                                        <rect key="frame" x="133" y="0.0" width="118" height="62.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPinkPriority"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hEp-QI-t61">
+                                                        <rect key="frame" x="266" y="1.9999999999999964" width="118" height="59.666666666666657"/>
+                                                        <color key="tintColor" name="AppPink"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="QYo-ZU-JRb"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w6Y-hj-oei">
+                                                <rect key="frame" x="30" y="70.666666666666629" width="384" height="63"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCD-nY-cQo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="63"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPinkPriority"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Values" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiH-5i-fRB">
+                                                        <rect key="frame" x="192" y="0.0" width="192" height="63"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPinkPriority"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EVc-Ko-sFP">
+                                                <rect key="frame" x="30" y="133.66666666666663" width="384" height="62.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpt-07-9gW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="62.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPink"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Values" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waD-qm-Mby">
+                                                        <rect key="frame" x="192" y="0.0" width="192" height="62.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPink"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-ip-Ran">
+                                                <rect key="frame" x="30" y="196.33333333333337" width="384" height="62.666666666666686"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yby-rL-nDK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="62.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPinkPriority"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Values" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQF-NF-5dn">
+                                                        <rect key="frame" x="192" y="0.0" width="192" height="62.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="AppPinkPriority"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="30" bottom="8" trailing="30"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="AppWhiteBg"/>
                                 <constraints>
+                                    <constraint firstItem="qxe-Mi-hU1" firstAttribute="top" secondItem="kco-mq-P3z" secondAttribute="bottom" constant="8" id="0Oe-VG-coA"/>
                                     <constraint firstAttribute="trailing" secondItem="JNr-W5-BGP" secondAttribute="trailing" id="15G-cw-fy9"/>
                                     <constraint firstItem="JNr-W5-BGP" firstAttribute="leading" secondItem="lOe-Wh-c7B" secondAttribute="leading" id="2Yz-vr-gGo"/>
+                                    <constraint firstAttribute="bottom" secondItem="qxe-Mi-hU1" secondAttribute="bottom" id="2bO-Hz-phF"/>
                                     <constraint firstItem="kco-mq-P3z" firstAttribute="leading" secondItem="lOe-Wh-c7B" secondAttribute="leading" constant="106" id="4L3-Xq-fGe"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kco-mq-P3z" secondAttribute="trailing" id="8ya-Nh-hKJ"/>
                                     <constraint firstAttribute="bottom" secondItem="kco-mq-P3z" secondAttribute="bottom" constant="275" id="B7f-9B-Wmm"/>
                                     <constraint firstItem="JNr-W5-BGP" firstAttribute="top" secondItem="LC7-jM-TRa" secondAttribute="bottom" constant="27" id="DgN-g2-0Xi"/>
+                                    <constraint firstAttribute="trailing" secondItem="qxe-Mi-hU1" secondAttribute="trailing" id="MKG-Mq-GLC"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LC7-jM-TRa" secondAttribute="trailing" constant="20" symbolic="YES" id="U1c-wz-be9"/>
                                     <constraint firstItem="LC7-jM-TRa" firstAttribute="top" secondItem="lOe-Wh-c7B" secondAttribute="top" constant="8" id="Yoz-JR-dtV"/>
                                     <constraint firstItem="LC7-jM-TRa" firstAttribute="leading" secondItem="lOe-Wh-c7B" secondAttribute="leading" constant="90" id="cK9-Ba-Efw"/>
+                                    <constraint firstItem="qxe-Mi-hU1" firstAttribute="leading" secondItem="lOe-Wh-c7B" secondAttribute="leading" id="mcP-vj-DPG"/>
                                     <constraint firstItem="kco-mq-P3z" firstAttribute="top" secondItem="JNr-W5-BGP" secondAttribute="bottom" id="nwJ-JF-hDF"/>
                                 </constraints>
                             </view>
@@ -1677,8 +1762,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Food Stats" id="sbi-B4-0hJ"/>
                     <connections>
+                        <outlet property="averageLabel" destination="lpt-07-9gW" id="bRd-Bi-TgT"/>
+                        <outlet property="averageValueLabel" destination="waD-qm-Mby" id="IyB-GU-uvx"/>
+                        <outlet property="daysLabel" destination="yby-rL-nDK" id="5vd-Vg-Xm9"/>
+                        <outlet property="daysValueLabel" destination="FQF-NF-5dn" id="odC-aQ-OuO"/>
                         <outlet property="headingLabel" destination="LC7-jM-TRa" id="SfB-8x-Dr9"/>
+                        <outlet property="latestLabel" destination="tCD-nY-cQo" id="8aP-oH-cEK"/>
+                        <outlet property="latestValueLabel" destination="XiH-5i-fRB" id="YR4-2r-hlG"/>
                         <outlet property="statsViewer" destination="JNr-W5-BGP" id="6GS-Nb-ISN"/>
+                        <outlet property="statusLabel" destination="ka1-hc-hKf" id="lvP-Kg-sGx"/>
+                        <outlet property="statusValueLabel" destination="liy-tO-FNb" id="yYu-Yn-azK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEA-KE-CZv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1950,6 +2043,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="1024" height="1024"/>
+        <image name="arrow.down.heart" catalog="system" width="128" height="109"/>
         <image name="body" width="512" height="512"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="content" width="1024" height="1024"/>
