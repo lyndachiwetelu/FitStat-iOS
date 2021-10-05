@@ -59,9 +59,6 @@ extension GetStatsSummary {
         var iconSlash = UIImage(systemName: "heart.slash.fill")!
         var icon = UIImage(systemName: "heart.fill")!
         
-        iconSlash = iconSlash.withTintColor(.red)
-        icon = icon.withTintColor(.black)
-        
         let caloriesOkay = percentage < 100 && latestDay!.calories <= idealCalorieCount
         let latestCaloriesOkay = latestDay!.calories <= idealCalorieCount
         let avgCalLess = avgCal <= idealCalorieCount
@@ -124,9 +121,6 @@ extension GetStatsSummary {
         var iconSlash = UIImage(systemName: "heart.slash.fill")!
         var icon = UIImage(systemName: "heart.fill")!
         
-        iconSlash = iconSlash.withTintColor(.red)
-        icon = icon.withTintColor(.black)
-        
         let sleepOkay = percentage > 0 && up && latestDay!.duration >= idealSleepTime
         let latestSleepOkay = latestDay!.duration >= idealSleepTime
         let avgSleepOkay = avgTime >= idealSleepTime
@@ -157,6 +151,7 @@ extension GetStatsSummary {
                 groupByDay[dayVal].weight += kg
             } else {
                 w.weight = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
+                w.unit = WeightUnits.kg
                 groupByDay.append(w)
             }
         }
@@ -187,10 +182,7 @@ extension GetStatsSummary {
         var iconSlash = UIImage(systemName: "heart.slash.fill")!
         var icon = UIImage(systemName: "heart.fill")!
         
-        iconSlash = iconSlash.withTintColor(.red)
-        icon = icon.withTintColor(.black)
-        
-        let weightOkay = (up == false) && percentage < 10
+        let weightOkay = (up == false) && percentage > 0
         let latestWeightOkay = latestDay!.weight <= idealWeight
         let avgWeightOkay = avgWeight <= idealWeight
         let statusIcon: UIImage = weightOkay ? icon : iconSlash
@@ -200,9 +192,9 @@ extension GetStatsSummary {
         let weight = latestDay!.unit == WeightUnits.kg ? Float(latestDay!.weight) : Float(latestDay!.weight / 2.2)
         
         let status = KeyValue(key: "Weight Status", value: "\(percentage)% \(upOrDown)", color: getColor(weightOkay), icon: statusIcon)
-        let latest = KeyValue(key: "Weight (kg)", value: "\(weight)", color: getColor(latestWeightOkay), icon: latestIcon)
+        let latest = KeyValue(key: "Weight (kg)", value: "\(round(weight))", color: getColor(latestWeightOkay), icon: latestIcon)
         
-        let average = KeyValue(key: "Average weight", value: "\(avgWeight)", color: getColor(avgWeightOkay), icon: avgIcon)
+        let average = KeyValue(key: "Average weight", value: "\(round(avgWeight))", color: getColor(avgWeightOkay), icon: avgIcon)
         let days = KeyValue(key: "Days Logged", value: "\(groupByDay.count)", color: UIColor(named: "AppDarkPinkPrio")!)
     
         return Summary(status: status, latest: latest, average: average, days: days)
@@ -251,9 +243,6 @@ extension GetStatsSummary {
         
         var iconSlash = UIImage(systemName: "heart.slash.fill")!
         var icon = UIImage(systemName: "heart.fill")!
-        
-        iconSlash = iconSlash.withTintColor(.red)
-        icon = icon.withTintColor(.black)
         
         let moodOkay = percentage >= 0 && up
         let latestMoodOkay = Int(latestDay!.moodValue) >= idealMood
