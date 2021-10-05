@@ -142,18 +142,6 @@ extension GetStatsSummary {
             return nil
         }
         
-//        for w in weights! {
-//            let day = getDayStringFromDate(date: w.time!)
-//            let kg = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
-//            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.time!) == day}) {
-//                groupByDay[dayVal].weight += kg
-//            } else {
-//                w.weight = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
-//                w.unit = WeightUnits.kg
-//                groupByDay.append(w)
-//            }
-//        }
-        
         // do calculations
         let latestDay = weights!.last
         
@@ -194,7 +182,7 @@ extension GetStatsSummary {
         let status = KeyValue(key: "Weight Status", value: "\(percentage)% \(upOrDown)", color: getColor(weightOkay), icon: statusIcon)
         let latest = KeyValue(key: "Weight (kg)", value: "\(round(weight))", color: getColor(latestWeightOkay), icon: latestIcon)
         
-        let average = KeyValue(key: "Average weight", value: "\(round(avgWeight))", color: getColor(avgWeightOkay), icon: avgIcon)
+        let average = KeyValue(key: "Average Weight", value: "\(round(avgWeight))", color: getColor(avgWeightOkay), icon: avgIcon)
         let days = KeyValue(key: "Days Logged", value: "\(weights!.count)", color: UIColor(named: "AppDarkPinkPrio")!)
     
         return Summary(status: status, latest: latest, average: average, days: days)
