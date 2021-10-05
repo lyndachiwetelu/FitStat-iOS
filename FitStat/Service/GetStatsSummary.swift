@@ -154,8 +154,10 @@ extension GetStatsSummary {
         }
         
         let avgWeight = totalWeight / Float(restOfDays.count)
+        let latestWeight = latestDay!.unit == WeightUnits.kg ? Float(latestDay!.weight) : Float(latestDay!.weight / 2.2)
+        
         var up = true
-        var diff: Int32 = Int32(avgWeight) - Int32(latestDay!.weight)
+        var diff: Int32 = Int32(avgWeight) - Int32(latestWeight)
         if diff > 0 {
             up = false
         } else {
@@ -183,41 +185,28 @@ extension GetStatsSummary {
         let latest = KeyValue(key: "Weight (kg)", value: "\(round(weight))", color: getColor(latestWeightOkay), icon: latestIcon)
         
         let average = KeyValue(key: "Average Weight", value: "\(round(avgWeight))", color: getColor(avgWeightOkay), icon: avgIcon)
-        let days = KeyValue(key: "Days Logged", value: "\(weights!.count)", color: UIColor(named: "AppDarkPinkPrio")!)
+        let days = KeyValue(key: "Times Logged", value: "\(weights!.count)", color: UIColor(named: "AppDarkPinkPrio")!)
     
         return Summary(status: status, latest: latest, average: average, days: days)
     }
     
     func getMoodSummaries(_ moods: [Mood]? ) -> Summary? {
-        var groupByDay = [MoodChartEntry]()
-        
         if moods == nil {
             return nil
         }
         
-        for m in moods! {
-            let day = getDayStringFromDate(date: m.time!)
-            if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
-                groupByDay[dayVal].moodValue += Float(Moods.getMoodValue(m.mood!))
-            } else {
-                let moodChartEntry = MoodChartEntry(date: m.time!, moodValue: Float(Moods.getMoodValue(m.mood!)))
-                groupByDay.append(moodChartEntry)
-            }
-        }
+        let latestDay = moods!.last
         
-        // do calculations
-        let latestDay = groupByDay.last
-        
-        let restOfDays = groupByDay
-        var moodTotal: Float = 0.0
+        let restOfDays = moods!.dropLast()
+        var moodTotal: Int = 0
         for r in restOfDays {
-            moodTotal += r.moodValue
+            moodTotal += Moods.getMoodValue(r.mood!)
         }
         
-        let avgMood = moodTotal / Float(restOfDays.count)
+        let avgMood = moodTotal / restOfDays.count
        
         var up = true
-        var diff: Int32 = Int32(avgMood) - Int32(latestDay!.moodValue)
+        var diff: Int32 = Int32(avgMood) - Int32(Moods.getMoodValue(latestDay!.mood!))
         if diff > 0 {
             up = false
         } else {
@@ -226,29 +215,27 @@ extension GetStatsSummary {
         
         let idealMood = 4
         
-        let percentage = Int(round((Float(diff) / avgMood * 100.0)))
+        let percentage = Int(round((Float(diff) / Float(avgMood) * 100.0)))
         let upOrDown =  up ? "up" : "down"
         
         let iconSlash = UIImage(systemName: "heart.slash.fill")!
         let icon = UIImage(systemName: "heart.fill")!
         
         let moodOkay = percentage >= 0 && up
-        let latestMoodOkay = Int(latestDay!.moodValue) >= idealMood
+        let latestMoodOkay = Moods.getMoodValue(latestDay!.mood!) >= idealMood
         let avgMoodOkay = Int(avgMood) >= idealMood
         let statusIcon: UIImage = moodOkay ? icon : iconSlash
         let latestIcon = latestMoodOkay ? icon : iconSlash
         let avgIcon = avgMoodOkay ? icon : iconSlash
         
         let status = KeyValue(key: "Mood Status", value: "\(percentage)% \(upOrDown)", color: getColor(moodOkay), icon: statusIcon)
-        let latest = KeyValue(key: "Mood", value: "\( Moods.getMoodForValue(Int(latestDay!.moodValue)) as String )", color: getColor(latestMoodOkay), icon: latestIcon)
+        let latest = KeyValue(key: "Mood", value: "\(latestDay!.mood!)", color: getColor(latestMoodOkay), icon: latestIcon)
         
         let average = KeyValue(key: "Average Mood", value: "\(Moods.getMoodForValue(Int(avgMood)))", color: getColor(avgMoodOkay), icon: avgIcon)
         let days = KeyValue(key: "Days Logged", value: "\(groupByDay.count)", color: UIColor(named: "AppDarkPinkPrio")!)
     
         return Summary(status: status, latest: latest, average: average, days: days)
     }
-    
-
     
     func getColor(_ isTrue: Bool) -> UIColor {
         return isTrue ? .green : .red
