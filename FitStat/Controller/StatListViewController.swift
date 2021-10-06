@@ -79,6 +79,8 @@ extension StatListViewController: UITableViewDelegate {
             destination.summary = getWeightSummaries(manager.fetchWeights())
         case Stats.workout:
             destination.summary = getWorkoutSummaries(manager.fetchWorkouts())
+        case Stats.metric:
+            destination.summaries = getMetricsSummaries(manager.fetchMetrics())
         default:
             destination.summary = nil
         }

@@ -15,7 +15,7 @@ protocol GetStatsSummary {
     func getWeightSummaries(_ weights: [Weight]? ) -> Summary?
     func getMoodSummaries(_ moods: [Mood]? ) -> Summary?
     func getWorkoutSummaries(_ workouts: [Workout]? ) -> Summary?
-    //func getMetricsSummaries(_ metrics: [Metric]? ) -> Summary?
+    func getMetricsSummaries(_ metrics: [Metric]? ) -> [Summary]?
 }
 
 extension GetStatsSummary {
@@ -328,6 +328,143 @@ extension GetStatsSummary {
         let days = KeyValue(key: "Times Logged", value: "\(moods!.count)", color: UIColor(named: "AppDarkPinkPrio")!)
     
         return Summary(status: status, latest: latest, average: average, days: days)
+    }
+    
+    func getMetricsSummaries(_ metrics: [Metric]? ) -> [Summary]? {
+        var chests = [Metric]()
+        var busts = [Metric]()
+        var lArm = [Metric]()
+        var rArm = [Metric]()
+        var lThigh = [Metric]()
+        var rThigh = [Metric]()
+        var waists = [Metric]()
+        var bellys = [Metric]()
+        
+        // first group
+        for m in metrics! {
+            switch m.part {
+            case Metrics.bust:
+                busts.append(m)
+            case Metrics.leftArm:
+                lArm.append(m)
+            case Metrics.rightArm:
+                rArm.append(m)
+            case Metrics.leftThigh:
+                lThigh.append(m)
+            case Metrics.rightThigh:
+                rThigh.append(m)
+            case Metrics.belly:
+                bellys.append(m)
+            case Metrics.waist:
+                waists.append(m)
+            default:
+                chests.append(m)
+            }
+        }
+        
+        var summaries = [Summary]()
+        for part in [chests, busts, lArm, rArm, lThigh, rThigh, bellys, waists] {
+            let summary = getMetricSummaries(part)
+            if summary != nil {
+                summaries.append(summary!)
+            }
+        }
+        
+        return summaries
+    }
+    
+    private func getMetricSummaries(_ metrics: [Metric]?) -> Summary? {
+        if metrics!.isEmpty {
+            return nil
+        }
+        
+        let latestDay = metrics!.last
+        
+        var restOfDays =  metrics![0..<Int(metrics!.count - 1)]
+        if restOfDays.isEmpty {
+            restOfDays = metrics![0..<Int(metrics!.count)]
+        }
+        
+        var metricTotal: Float = 0
+        for r in restOfDays {
+            metricTotal += getStandardMetric(r.unit!, r.value)
+        }
+        
+        let avgMetric = metricTotal / Float(restOfDays.count)
+       
+        var up = true
+        var diff: Int32 = Int32(avgMetric) - Int32(getStandardMetric(latestDay!.unit!, latestDay!.value))
+        
+        if diff > 0 {
+            up = false
+        } else {
+            diff = abs(diff)
+        }
+        
+        let idealMetric = getIdealMetric(part: latestDay!.part!)
+        
+        let percentage = Int(round((Float(diff) / Float(avgMetric) * 100.0)))
+        let upOrDown =  up ? "up" : "down"
+        
+        let totalAverageMetric = ( metricTotal + getStandardMetric(latestDay!.unit!, latestDay!.value)) / Float(restOfDays.count + 1)
+        
+        let iconSlash = UIImage(systemName: "heart.slash.fill")!
+        let icon = UIImage(systemName: "heart.fill")!
+        
+        let metricOkay = percentage >= 0 && up
+        let latestMetricOkay = getStandardMetric(latestDay!.unit!, latestDay!.value) >= idealMetric
+        let avgMetricOkay = totalAverageMetric >= idealMetric
+        let statusIcon: UIImage = metricOkay ? icon : iconSlash
+        let latestIcon = latestMetricOkay ? icon : iconSlash
+        let avgIcon = avgMetricOkay ? icon : iconSlash
+        
+        let part = latestDay!.part!
+        
+        let status = KeyValue(key: "\(part) Status", value: "\(percentage)% \(upOrDown)", color: getColor(metricOkay), icon: statusIcon)
+        let latest = KeyValue(key: part, value: toDecPlacesString(value: latestDay!.value, num: 2), color: getColor(latestMetricOkay), icon: latestIcon)
+        
+        let average = KeyValue(key: "Average \(part) in cm", value: toDecPlacesString(value: totalAverageMetric, num: 2) , color: getColor(avgMetricOkay), icon: avgIcon)
+                                   
+        let days = KeyValue(key: "Times Logged", value: "\(metrics!.count)", color: UIColor(named: "AppDarkPinkPrio")!)
+    
+        return Summary(status: status, latest: latest, average: average, days: days)
+    }
+    
+    func getIdealMetric(part: String) -> Float {
+        switch part {
+        case Metrics.bust:
+            return 30.0
+        case Metrics.leftArm:
+            return 25.0
+        case Metrics.rightArm:
+            return 25.0
+        case Metrics.leftThigh:
+            return 55.0
+        case Metrics.rightThigh:
+            return 55.0
+        case Metrics.belly:
+            return 87.0
+        case Metrics.waist:
+            return 87.0
+        default:
+            return 30.0
+        }
+    }
+    
+    func getStandardMetric(_ unit: String, _ value: Float) -> Float {
+        let val: Float?
+        switch unit {
+            case MetricUnits.centimeters:
+                val = Float(value)
+            case MetricUnits.metres:
+                val = Float(value * 100)
+            case MetricUnits.inches:
+                val = Float(value * 2.54)
+            default:
+                val = Float(value)
+        }
+        
+        return val!
     }
     
     func getColor(_ isTrue: Bool) -> UIColor {
