@@ -421,7 +421,7 @@ extension GetStatsSummary {
         let part = latestDay!.part!
         
         let status = KeyValue(key: "\(part) Status", value: "\(percentage)% \(upOrDown)", color: getColor(metricOkay), icon: statusIcon)
-        let latest = KeyValue(key: part, value: toDecPlacesString(value: latestDay!.value, num: 2), color: getColor(latestMetricOkay), icon: latestIcon)
+        let latest = KeyValue(key: "\(part) in cm", value: toDecPlacesString(value: latestDay!.value, num: 2), color: getColor(latestMetricOkay), icon: latestIcon)
         
         let average = KeyValue(key: "Average \(part) in cm", value: toDecPlacesString(value: totalAverageMetric, num: 2) , color: getColor(avgMetricOkay), icon: avgIcon)
                                    
