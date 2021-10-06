@@ -33,6 +33,11 @@ class ShowStatsViewController: UIViewController {
     @IBOutlet var daysIcon: UIImageView!
     
     var summary : Summary?
+    var summaries: [Summary]? {
+        didSet {
+            summary = summaries?.first
+        }
+    }
     var statsText = ""
     var lineChartDataSets = [LineChartDataSet]()
     var bubbleChartDataSets = [BubbleChartDataSet]()
@@ -41,17 +46,6 @@ class ShowStatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if summary == nil {
-            handleEmptySummary()
-            return
-        }
-        
-//        let _chart = LineChartView()
-//        _chart.data = LineChartData(dataSets: lineChartDataSets)
-//        _chart.delegate = self
-//        _chart.frame = statsViewer.bounds
-//        statsViewer.addSubview(_chart)
-//        return
         
         let chart = FLineChartView()
         chart.delegate = self
@@ -59,28 +53,14 @@ class ShowStatsViewController: UIViewController {
         chart.xAxisText = xText
         chart.frame = statsViewer.bounds
         chart.lineChartDataSets = lineChartDataSets
-        
-        
-        headingLabel.text = "Your \(statsText) at a glance"
         statsViewer.addSubview(chart)
         
-        statusLabel.text = summary?.status.key
-        statusValueLabel.text = summary?.status.value
-        statusIcon.image = summary?.status.icon
-        statusIcon.tintColor = summary?.status.color
+        headingLabel.text = "Your \(statsText) at a glance"
         
-        latestLabel.text = summary?.latest.key
-        latestValueLabel.text = summary?.latest.value
-        latestIcon.image = summary?.latest.icon
-        latestIcon.tintColor = summary?.latest.color
-        
-        averageLabel.text = summary?.average.key
-        averageValueLabel.text = summary?.average.value
-        averageIcon.image = summary?.average.icon
-        averageIcon.tintColor = summary?.average.color
-        
-        daysLabel.text = summary?.days.key
-        daysValueLabel.text = summary?.days.value
+        if summary == nil && summaries == nil {
+            handleEmptySummary()
+        }
+        loadSummary()
     }
     
     func handleEmptySummary() {
@@ -104,25 +84,40 @@ class ShowStatsViewController: UIViewController {
         daysLabel.isHidden = true
         daysValueLabel.isHidden = true
     }
+    
+    func loadSummary() {
+        statusLabel.text = summary?.status.key
+        statusValueLabel.text = summary?.status.value
+        statusIcon.image = summary?.status.icon
+        statusIcon.tintColor = summary?.status.color
+        
+        latestLabel.text = summary?.latest.key
+        latestValueLabel.text = summary?.latest.value
+        latestIcon.image = summary?.latest.icon
+        latestIcon.tintColor = summary?.latest.color
+        
+        averageLabel.text = summary?.average.key
+        averageValueLabel.text = summary?.average.value
+        averageIcon.image = summary?.average.icon
+        averageIcon.tintColor = summary?.average.color
+        
+        daysLabel.text = summary?.days.key
+        daysValueLabel.text = summary?.days.value
+    }
 }
 
 
-//extension ShowStatsViewController: ChartViewDelegate {
-//    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-//        print(highlight.dataSetIndex)
-//    }
-//
-//    func chartValueNothingSelected(_ chartView: ChartViewBase)
-//    {
-//        print("nothing selected")
-//    }
-//}
-
-
-extension ShowStatsViewController: FLineChartViewDelegate {
-    func didTapChartValue() {
-        print("was tapped")
+extension ShowStatsViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        if !summaries?.isEmpty {
+            summary = summaries![highlight.dataSetIndex]
+            DispatchQueue.main.async {
+                self.loadSummary()
+            }
+        }
     }
-    
-    
+
+    func chartValueNothingSelected(_ chartView: ChartViewBase)
+    {
+    }
 }

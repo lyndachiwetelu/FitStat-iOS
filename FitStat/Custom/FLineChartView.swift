@@ -15,7 +15,7 @@ class FLineChartView: UIView {
     @IBOutlet var xAxisLabel: UILabel!
     @IBOutlet var chartView: UIView!
     
-    var delegate : FLineChartViewDelegate?
+    var delegate : ChartViewDelegate?
     
     var yAxisText: String = ""
     var xAxisText = ""
@@ -25,7 +25,7 @@ class FLineChartView: UIView {
         didSet {
             let lineChartData = LineChartData(dataSets: lineChartDataSets!)
             let chart = LineChartView()
-            chart.delegate = self
+            chart.delegate = delegate
             
             chart.data = lineChartData
             let formatter = XAxisNameFormater()
@@ -66,22 +66,7 @@ class FLineChartView: UIView {
             let nib = UINib(nibName: "FLineChartView", bundle: nil)
             nib.instantiate(withOwner: self, options: nil)
             contentView.frame = bounds
-            contentView.translatesAutoresizingMaskIntoConstraints = false
             addSubview(contentView)
         }
 
 }
-
-
-extension FLineChartView: ChartViewDelegate {
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("INDEX: \(highlight.dataSetIndex) ")
-        delegate?.didTapChartValue()
-    }
-}
-
-protocol FLineChartViewDelegate {
-    func didTapChartValue()
-}
-
-
