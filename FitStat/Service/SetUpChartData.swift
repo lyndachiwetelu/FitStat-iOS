@@ -19,7 +19,7 @@ protocol SetUpChartData {
 
 
 extension SetUpChartData {
-    func fetchMetricsChartData(_ metrics: [Metric]? = [Metric]()) -> [[ChartDataEntry]] {
+    func fetchMetricsChartData(_ metrics: [Metric]? = [Metric]()) -> [MetricChartData] {
         var metricEntries = [MetricChartEntry]()
         
         var chestEntries = [ChartDataEntry]()
@@ -74,10 +74,15 @@ extension SetUpChartData {
             
         }
         
-        var toReturn = [[ChartDataEntry]]()
-        for e in [chestEntries, bustEntries, lArmEntries, rArmEntries, lThighEntries, rThighEntries, waistEntries, bellyEntries] {
+        let labels = ["Chest", "Bust", "LArm", "RArm", "LThigh", "RThigh", "Waist", "Belly"]
+        let colors = [UIColor.systemRed, UIColor.white, UIColor.blue, UIColor.purple,
+                      UIColor.systemPink, UIColor.brown, UIColor.green, UIColor.yellow]
+        
+        var toReturn = [MetricChartData]()
+        for (index, e) in [chestEntries, bustEntries, lArmEntries, rArmEntries, lThighEntries, rThighEntries, waistEntries, bellyEntries].enumerated() {
             if !e.isEmpty {
-                toReturn.append(e)
+                let chartData = MetricChartData(chartData: e, color: colors[index], label: labels[index])
+                toReturn.append(chartData)
             }
         }
         

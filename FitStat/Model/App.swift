@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Charts
 
 struct AppConstant {
     
@@ -150,4 +151,10 @@ struct MetricChartEntry {
     var date: Date
     var centimeters: Float
     var part: String
+}
+
+struct MetricChartData {
+    let chartData: [ChartDataEntry]
+    let color: UIColor
+    let label: String
 }

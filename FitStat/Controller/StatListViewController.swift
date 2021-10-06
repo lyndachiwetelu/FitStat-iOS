@@ -142,12 +142,9 @@ extension StatListViewController: UITableViewDelegate {
         case Stats.metric:
             let sets = fetchMetricsChartData(manager.fetchMetrics())
             var result = [LineChartDataSet]()
-            let labels = ["Chest", "Bust", "LArm", "RArm", "LThigh", "RThigh", "Waist", "Belly"]
-            let colors = [UIColor.systemRed, UIColor.white, UIColor.blue, UIColor.purple,
-                          UIColor.systemPink, UIColor.brown, UIColor.green, UIColor.yellow]
             
-            for (index, s) in sets.enumerated() {
-                let ds = getLineChartDataSet(entries: s, label: labels[index], color: colors[index], textColor: .systemYellow, gradientColor: colors[index].cgColor, fillGradient: false, fill: false)!
+            for s in sets {
+                let ds = getLineChartDataSet(entries: s.chartData, label: s.label, color: s.color, textColor: .systemYellow, gradientColor: s.color.cgColor, fillGradient: false, fill: false)!
                 result.append(ds)
             }
             return result
