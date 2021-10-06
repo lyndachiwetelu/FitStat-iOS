@@ -15,6 +15,7 @@ protocol SetUpChartData {
     func fetchMoodsChartData(_ moods: [Mood]? ) -> [ChartDataEntry]
     func fetchWeightsChartData(_ weights: [Weight]? ) -> [ChartDataEntry]
     func fetchWorkoutsChartData(_ workouts: [Workout]? ) -> [[ChartDataEntry]]
+    func fetchMetricsChartData(_ metrics: [Metric]?) -> [MetricChartData]
 }
 
 
@@ -74,7 +75,7 @@ extension SetUpChartData {
             
         }
         
-        let labels = ["Chest", "Bust", "LArm", "RArm", "LThigh", "RThigh", "Waist", "Belly"]
+        let labels = ["Chest", "Bust", "Left Arm", "Right Arm", "Left Thigh", "Right Thigh", "Waist", "Belly"]
         let colors = [UIColor.systemRed, UIColor.white, UIColor.blue, UIColor.purple,
                       UIColor.systemPink, UIColor.brown, UIColor.green, UIColor.yellow]
         

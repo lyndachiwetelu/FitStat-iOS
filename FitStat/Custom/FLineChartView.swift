@@ -35,7 +35,7 @@ class FLineChartView: UIView {
             chart.xAxis.labelPosition = .bottom
             chart.leftAxis.labelPosition = .outsideChart
             chart.rightAxis.enabled = false
-            chart.legend.enabled = false
+            chart.legend.enabled = true
             chart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .easeInSine)
             chart.highlightPerTapEnabled = true
             chart.pinchZoomEnabled = true
