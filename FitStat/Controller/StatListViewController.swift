@@ -38,9 +38,6 @@ class StatListViewController: UIViewController, SetUpChartData, GetStatsSummary 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "StatListTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
-//        for f in ["Sleep", "Workout", "Weight", "Metric", "Mood"] {
-//            manager.deleteData(entityName: f)
-//        }
         
     }
     
@@ -99,6 +96,8 @@ extension StatListViewController: UITableViewDelegate {
             destination.yText = "Mood"
         case Stats.weight:
             destination.yText = "Kg"
+        case Stats.metric:
+            destination.yText = "cm"
             
         default:
             destination.yText = ""
