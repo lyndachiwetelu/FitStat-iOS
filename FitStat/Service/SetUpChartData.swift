@@ -85,10 +85,12 @@ extension SetUpChartData {
         
         for w in workouts! {
             let day = getDayStringFromDate(date: w.time!)
+            let duration = w.durationUnit == TimeUnits.minutes ? Float(w.duration) : Float(w.duration) * 60.0
             if let dayVal = groupByDay.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
                 groupByDay[dayVal].calories += Int(w.calories)
+                groupByDay[dayVal].duration += duration
             } else {
-                let chartEntry = WorkoutChartEntry(date: w.time!, calories: Int(w.calories), duration: Float(w.duration))
+                let chartEntry = WorkoutChartEntry(date: w.time!, calories: Int(w.calories), duration: duration)
                 groupByDay.append(chartEntry)
             }
         }
@@ -116,7 +118,6 @@ extension SetUpChartData {
     }
     
     func fetchMoodsChartData(_ moods: [Mood]? = [Mood]() ) -> [ChartDataEntry] {
-        var groupByDay = [MoodChartEntry]()
         var entries = [ChartDataEntry]()
         
         for val in moods! {
@@ -157,7 +158,7 @@ extension SetUpChartData {
         
         for s in sleeps! {
             let day = getDayStringFromDate(date: s.time!)
-            let duration = s.durationUnit == "Hours" ? Float(s.duration) : Float(s.duration / 60)
+            let duration = s.durationUnit == TimeUnits.hours ? Float(s.duration) : Float(s.duration / 60)
             if s.light {
                 if let dayVal = light.firstIndex(where: {getDayStringFromDate(date: $0.date) == day}) {
                     light[dayVal].hours += duration

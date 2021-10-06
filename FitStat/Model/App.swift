@@ -45,6 +45,11 @@ struct WeightUnits {
     static let lbs = "Pounds"
 }
 
+struct TimeUnits {
+    static let hours = "Hours"
+    static let minutes = "Minutes"
+}
+
 struct Metrics {
     static let chest = "Chest"
     static let bust = "Bust"

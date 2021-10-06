@@ -15,6 +15,8 @@ class FLineChartView: UIView {
     @IBOutlet var xAxisLabel: UILabel!
     @IBOutlet var chartView: UIView!
     
+    var delegate : FLineChartViewDelegate?
+    
     var yAxisText: String = ""
     var xAxisText = ""
     
@@ -23,6 +25,8 @@ class FLineChartView: UIView {
         didSet {
             let lineChartData = LineChartData(dataSets: lineChartDataSets!)
             let chart = LineChartView()
+            chart.delegate = self
+            
             chart.data = lineChartData
             let formatter = XAxisNameFormater()
             chart.xAxis.drawGridLinesEnabled = false
@@ -31,10 +35,15 @@ class FLineChartView: UIView {
             chart.xAxis.labelPosition = .bottom
             chart.leftAxis.labelPosition = .outsideChart
             chart.rightAxis.enabled = false
-            chart.legend.enabled = true
+            chart.legend.enabled = false
             chart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .easeInSine)
+            chart.highlightPerTapEnabled = true
+            chart.pinchZoomEnabled = true
+            chart.doubleTapToZoomEnabled = true
+    
             chart.frame = chartView.bounds
             chartView.translatesAutoresizingMaskIntoConstraints = false
+           
             chartView.addSubview(chart)
             yAxisLabel.transform =  CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
              
@@ -61,6 +70,18 @@ class FLineChartView: UIView {
             addSubview(contentView)
         }
 
+}
+
+
+extension FLineChartView: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print("INDEX: \(highlight.dataSetIndex) ")
+        delegate?.didTapChartValue()
+    }
+}
+
+protocol FLineChartViewDelegate {
+    func didTapChartValue()
 }
 
 

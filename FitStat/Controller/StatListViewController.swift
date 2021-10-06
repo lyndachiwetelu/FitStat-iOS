@@ -38,6 +38,10 @@ class StatListViewController: UIViewController, SetUpChartData, GetStatsSummary 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "StatListTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+//        for f in ["Sleep", "Workout", "Weight", "Metric", "Mood"] {
+//            manager.deleteData(entityName: f)
+//        }
+        
     }
     
 }
@@ -73,6 +77,8 @@ extension StatListViewController: UITableViewDelegate {
             destination.summary = getMoodSummaries(manager.fetchMoods())
         case Stats.weight:
             destination.summary = getWeightSummaries(manager.fetchWeights())
+        case Stats.workout:
+            destination.summary = getWorkoutSummaries(manager.fetchWorkouts())
         default:
             destination.summary = nil
         }
@@ -84,7 +90,7 @@ extension StatListViewController: UITableViewDelegate {
         case Stats.food:
             destination.yText = "Calories"
         case Stats.workout:
-            destination.yText = "Hours/Calories"
+            destination.yText = "Mins/Calories"
         case Stats.sleep:
             destination.yText = "Hours Slept"
         case Stats.mood:
@@ -124,7 +130,7 @@ extension StatListViewController: UITableViewDelegate {
         case Stats.workout:
             let sets = fetchWorkoutsChartData(manager.fetchWorkouts())
             var result = [LineChartDataSet]()
-            let labels = ["Calories Burned", "Duration In Hours"]
+            let labels = ["Calories Burned", "Duration In Mins"]
             let colors = [UIColor.systemRed, UIColor.white]
             for (index, s) in sets.enumerated() {
                 let ds = getLineChartDataSet(entries: s, label: labels[index], color: colors[index], textColor: .systemYellow, gradientColor: colors[index].cgColor)!
@@ -165,6 +171,8 @@ extension StatListViewController: UITableViewDelegate {
         if fill == false {
             lineChartDataSet.lineWidth = 5.5
         }
+        
+        lineChartDataSet.highlightEnabled = true
         
         lineChartDataSet.drawFilledEnabled = fill
         return lineChartDataSet

@@ -1635,7 +1635,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOe-Wh-c7B">
                                 <rect key="frame" x="0.0" y="56" width="414" height="757"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Workout Stats at a glance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LC7-jM-TRa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Workout Stats at a glance" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LC7-jM-TRa">
                                         <rect key="frame" x="89.999999999999986" y="7.9999999999999982" width="233.66666666666663" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="AppDarkPink"/>
@@ -1649,6 +1649,9 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-W5-BGP">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="396.66666666666663"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="396.67000000000002" id="6Nq-Um-lBs"/>
+                                        </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qxe-Mi-hU1" userLabel="Main Stack View">
                                         <rect key="frame" x="0.0" y="490" width="414" height="257"/>
@@ -1826,6 +1829,7 @@
                         <outlet property="averageIcon" destination="VXH-CQ-Lfe" id="Caj-sl-iaf"/>
                         <outlet property="averageLabel" destination="lpt-07-9gW" id="bRd-Bi-TgT"/>
                         <outlet property="averageValueLabel" destination="waD-qm-Mby" id="IyB-GU-uvx"/>
+                        <outlet property="daysIcon" destination="lUz-gz-uMI" id="rwZ-sw-lcj"/>
                         <outlet property="daysLabel" destination="yby-rL-nDK" id="5vd-Vg-Xm9"/>
                         <outlet property="daysValueLabel" destination="FQF-NF-5dn" id="odC-aQ-OuO"/>
                         <outlet property="headingLabel" destination="LC7-jM-TRa" id="SfB-8x-Dr9"/>
@@ -1836,6 +1840,7 @@
                         <outlet property="statusIcon" destination="ycV-b1-sl7" id="1ef-tP-UIe"/>
                         <outlet property="statusLabel" destination="ka1-hc-hKf" id="lvP-Kg-sGx"/>
                         <outlet property="statusValueLabel" destination="liy-tO-FNb" id="yYu-Yn-azK"/>
+                        <outlet property="summaryLabel" destination="kco-mq-P3z" id="9Og-ba-coZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEA-KE-CZv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

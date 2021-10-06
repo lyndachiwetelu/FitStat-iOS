@@ -128,5 +128,25 @@ struct CoreDataManager {
             return nil
         }
     }
+    
+    mutating func deleteData(entityName: String) {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let minDate = dateFormatter.date(from: "2021-10-05 00:00:00")
+        let maxDate = dateFormatter.date(from: "2021-10-06 23:59:59")
+        let predicate = NSPredicate(format: "time < %@ OR time > %@", minDate! as NSDate, maxDate! as NSDate)
+        fetchRequest.predicate = predicate
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(deleteRequest)
+            print("Items deleted")
+        } catch {
+            print("Error deleting: \(String(describing: error))")
+           
+        }
+    }
 
 }

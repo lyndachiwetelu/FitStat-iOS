@@ -16,11 +16,11 @@ class AddWorkoutViewController: UIViewController {
     
     @IBOutlet var durationTextField: UITextField!
     var times = [
-        "Hours",
-        "Minutes"
+        TimeUnits.hours,
+        TimeUnits.minutes
     ]
     
-    var selectedTime = "Hours"
+    var selectedTime = TimeUnits.hours
     
     override func viewDidLoad() {
         super.viewDidLoad()

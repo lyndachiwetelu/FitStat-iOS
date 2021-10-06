@@ -15,11 +15,11 @@ class AddSleepViewController: UIViewController {
     @IBOutlet var heavySleepCheckBox: CheckBoxView!
     @IBOutlet var sleepTimePicker: UIPickerView!
     var times = [
-        "Hours",
-        "Minutes"
+        TimeUnits.hours,
+        TimeUnits.minutes
     ]
     
-    var selectedUnit = "Hours"
+    var selectedUnit = TimeUnits.hours
     var light: String = "Light"
     
     override func viewDidLoad() {

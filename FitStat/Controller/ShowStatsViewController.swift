@@ -9,7 +9,7 @@ import UIKit
 import Charts
 
 
-class ShowStatsViewController: UIViewController, ChartViewDelegate {
+class ShowStatsViewController: UIViewController {
     
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var statusValueLabel: UILabel!
@@ -19,6 +19,7 @@ class ShowStatsViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var averageLabel: UILabel!
     @IBOutlet var averageValueLabel: UILabel!
     
+    @IBOutlet var summaryLabel: UILabel!
     @IBOutlet var daysLabel: UILabel!
     @IBOutlet var daysValueLabel: UILabel!
     
@@ -29,8 +30,7 @@ class ShowStatsViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var latestIcon: UIImageView!
     @IBOutlet var averageIcon: UIImageView!
     
-    
-    
+    @IBOutlet var daysIcon: UIImageView!
     
     var summary : Summary?
     var statsText = ""
@@ -41,10 +41,26 @@ class ShowStatsViewController: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if summary == nil {
+            handleEmptySummary()
+            return
+        }
+        
+//        let _chart = LineChartView()
+//        _chart.data = LineChartData(dataSets: lineChartDataSets)
+//        _chart.delegate = self
+//        _chart.frame = statsViewer.bounds
+//        statsViewer.addSubview(_chart)
+//        return
+        
         let chart = FLineChartView()
+        chart.delegate = self
         chart.yAxisText = yText
         chart.xAxisText = xText
+        chart.frame = statsViewer.bounds
         chart.lineChartDataSets = lineChartDataSets
+        
+        
         headingLabel.text = "Your \(statsText) at a glance"
         statsViewer.addSubview(chart)
         
@@ -66,4 +82,47 @@ class ShowStatsViewController: UIViewController, ChartViewDelegate {
         daysLabel.text = summary?.days.key
         daysValueLabel.text = summary?.days.value
     }
+    
+    func handleEmptySummary() {
+        headingLabel.text = "No stats entered yet. Log your \(statsText) to visualize"
+        daysIcon.isHidden = true
+        statsViewer.isHidden = true
+        summaryLabel.isHidden = true
+        
+        statusLabel.isHidden = true
+        statusValueLabel.isHidden = true
+        statusIcon.isHidden = true
+        
+        latestLabel.isHidden = true
+        latestValueLabel.isHidden = true
+        latestIcon.isHidden = true
+
+        averageLabel.isHidden = true
+        averageValueLabel.isHidden = true
+        averageIcon.isHidden = true
+        
+        daysLabel.isHidden = true
+        daysValueLabel.isHidden = true
+    }
+}
+
+
+//extension ShowStatsViewController: ChartViewDelegate {
+//    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+//        print(highlight.dataSetIndex)
+//    }
+//
+//    func chartValueNothingSelected(_ chartView: ChartViewBase)
+//    {
+//        print("nothing selected")
+//    }
+//}
+
+
+extension ShowStatsViewController: FLineChartViewDelegate {
+    func didTapChartValue() {
+        print("was tapped")
+    }
+    
+    
 }
