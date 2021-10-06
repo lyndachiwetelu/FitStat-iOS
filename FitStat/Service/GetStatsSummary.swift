@@ -411,9 +411,9 @@ extension GetStatsSummary {
         let iconSlash = UIImage(systemName: "heart.slash.fill")!
         let icon = UIImage(systemName: "heart.fill")!
         
-        let metricOkay = percentage >= 0 && up
-        let latestMetricOkay = getStandardMetric(latestDay!.unit!, latestDay!.value) >= idealMetric
-        let avgMetricOkay = totalAverageMetric >= idealMetric
+        let metricOkay = percentage >= 0 && !up
+        let latestMetricOkay = getStandardMetric(latestDay!.unit!, latestDay!.value) <= idealMetric
+        let avgMetricOkay = totalAverageMetric <= idealMetric
         let statusIcon: UIImage = metricOkay ? icon : iconSlash
         let latestIcon = latestMetricOkay ? icon : iconSlash
         let avgIcon = avgMetricOkay ? icon : iconSlash

@@ -74,7 +74,14 @@ extension SetUpChartData {
             
         }
         
-        return [chestEntries, bustEntries, lArmEntries, rArmEntries, lThighEntries, rThighEntries, waistEntries, bellyEntries]
+        var toReturn = [[ChartDataEntry]]()
+        for e in [chestEntries, bustEntries, lArmEntries, rArmEntries, lThighEntries, rThighEntries, waistEntries, bellyEntries] {
+            if !e.isEmpty {
+                toReturn.append(e)
+            }
+        }
+        
+        return toReturn
     }
     
     
