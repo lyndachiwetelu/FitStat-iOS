@@ -109,7 +109,7 @@ class ShowStatsViewController: UIViewController {
 
 extension ShowStatsViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        if !summaries?.isEmpty {
+        if !summaries!.isEmpty {
             summary = summaries![highlight.dataSetIndex]
             DispatchQueue.main.async {
                 self.loadSummary()
