@@ -200,7 +200,7 @@ extension GetStatsSummary {
         let iconSlash = UIImage(systemName: "heart.slash.fill")!
         let icon = UIImage(systemName: "heart.fill")!
         
-        let sleepOkay = percentage > 0 && up && latestDay!.hours >= idealSleepTime
+        let sleepOkay = percentage >= 0 && up && latestDay!.hours >= idealSleepTime
         let latestSleepOkay = latestDay!.hours >= idealSleepTime
         let avgSleepOkay = avgTime >= idealSleepTime
         let statusIcon: UIImage = sleepOkay ? icon : iconSlash
