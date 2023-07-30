@@ -122,7 +122,7 @@ extension SetUpChartData {
         var entries = [ChartDataEntry]()
 
         for w in weights! {
-            let kg = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.2)
+            let kg = w.unit == WeightUnits.kg ? Float(w.weight) : Float(w.weight / 2.20462)
             let entry = ChartDataEntry(x: Double(w.time!.timeIntervalSince1970), y: Double(kg))
             entries.append(entry)
         }
