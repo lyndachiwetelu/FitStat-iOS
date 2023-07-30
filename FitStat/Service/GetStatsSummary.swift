@@ -126,7 +126,7 @@ extension GetStatsSummary {
             diff = abs(diff)
         }
         
-        let idealCalorieCount = 1200
+        let idealCalorieCount = 1400
         
         let percentage = Int(round((Float(diff) / Float(avgCal)) * 100.0))
         let upOrDown =  up ? "up" : "down"
